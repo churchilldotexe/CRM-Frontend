@@ -9,28 +9,28 @@
 }
 
 /* Specific Styles for Item Description and Custom Fields */
-[data-bs-theme=dark] .item-desc, 
-[data-bs-theme=dark] .custom-fields { 
+[data-bs-theme=dark] .item-desc,
+[data-bs-theme=dark] .custom-fields {
   border: 1px solid #3c4652;
   background-color: #121e2d;
   color: #f9f9f9;
 }
 
 /* Styles for Placeholders */
-[data-bs-theme=light] .picture-placeholder, 
-[data-bs-theme=light] .file-placeholder { 
+[data-bs-theme=light] .picture-placeholder,
+[data-bs-theme=light] .file-placeholder {
   background-color: #f9f9f9;
   color: #333; /* Ensure light mode placeholder text is visible */
 }
 
-[data-bs-theme=dark] .picture-placeholder, 
-[data-bs-theme=dark] .file-placeholder { 
+[data-bs-theme=dark] .picture-placeholder,
+[data-bs-theme=dark] .file-placeholder {
   border: 2px dashed #3c4652;
   background-color: #121e2d;
   color: #f9f9f9;
 }
- 
-[data-bs-theme=dark] .items-card-text.editable { 
+
+[data-bs-theme=dark] .items-card-text.editable {
   color: #333;
 }
 
@@ -56,38 +56,38 @@ section {
   WIDTH: 4REM;
 }
 
-.navbar-vertical.navbar-expand-xl { 
+.navbar-vertical.navbar-expand-xl {
   padding-right: 2rem;
 }
 
 .sidebar {
   width: 60px;
-  background-color: transparent; 
-  border: none; 
+  background-color: transparent;
+  border: none;
   min-height: 100vh; /* Full height of the viewport */
   display: flex;
-  flex-direction: column; 
-  align-items: center; 
-  padding-top: 5rem !important; 
+  flex-direction: column;
+  align-items: center;
+  padding-top: 5rem !important;
 }
 
 .side-link {
-  width: 100%; 
-  text-align: center; 
-  padding: 10px 0; 
+  width: 100%;
+  text-align: center;
+  padding: 10px 0;
 }
 
 .nav-link-icon {
   font-size: 20px;
-  color: #6c757d; 
+  color: #6c757d;
 }
 
 .side-link:hover .nav-link-icon {
-  color: #007bff; 
+  color: #007bff;
 }
 
 .navbar-glass, #navbarStandard, .navbar-collapse {
-  z-index: 100; 
+  z-index: 101; /*to have a higher stacking context than #list-example-desktop*/
 }
 
 .list-group-item.active .icon {
@@ -99,55 +99,55 @@ section {
 }
 
 #list-example-mobile  {
-  margin-top: 70px; 
-  border-radius: 5px; 
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+  margin-top: 70px;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 #list-example-desktop {
   width: 75%; /* Set a fixed width, adjust as needed */
   max-width: 1400px; /* Limit the maximum width */
-  margin-left: auto; 
+  margin-left: auto;
   margin-right: auto;
   margin-top: 70px;
-  left: 50%; 
-  transform: translateX(-50%); 
-  z-index: 101; 
-  border-radius: 5px; 
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 100; /*switch z-index with .navbar-collapse*/
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .list-group-item {
-  padding: 10px 15px; 
+  padding: 10px 15px;
   font-weight: 600;
-  font-size: 14px; 
+  font-size: 14px;
 }
 
 /* Media Queries ----------------------------- */
 @media (min-width: 768px) and (max-width: 1024px) {
   #list-example-desktop {
-    width: 90%; 
+    width: 90%;
     max-width: 1000px;
   }
 }
 
 @media (min-width: 1540px) and (max-width: 1900px) {
   #list-example-desktop {
-    width: 100%; 
+    width: 100%;
     max-width: 1400px;
   }
 }
 
 @media (min-width: 1025px) and (max-width: 1199px) {
   #list-example-desktop {
-    width: 90%; 
+    width: 90%;
     max-width: 900px;
   }
 }
 
 @media (min-width: 1200px) and (max-width: 1439px) {
   #list-example-desktop {
-    width: 90%; 
+    width: 90%;
     max-width: 1080px;
   }
 }
@@ -239,7 +239,7 @@ section {
 .text-input, .text-input-title {
   width: 70%;
   display: none;
-  
+
 }
 
 /* Set default width for the display and dropdown */
@@ -254,8 +254,8 @@ section {
 }
 
 #customer-dropdown + .select2-container--bootstrap-5 {
-  display: block !important; 
-  width: 70% !important;  
+  display: block !important;
+  width: 70% !important;
 }
 
 /* Apply font-size and line-height to Select2 container */
@@ -276,21 +276,21 @@ section {
 
 .text-input {
   font-family: inherit !important;
-  font-size: 14px !important;      
-  line-height: 1.4 !important;     
+  font-size: 14px !important;
+  line-height: 1.4 !important;
 }
 
 .textarea-form {
   display: none;
   font-family: inherit !important;
-  font-size: 14px !important;      
-  line-height: 1.4 !important;   
+  font-size: 14px !important;
+  line-height: 1.4 !important;
 }
 
 .form-control-dates {
   font-family: inherit !important;  /* Use the default font of the parent */
-  font-size: 14px !important;      
-  line-height: 1.4 !important;     
+  font-size: 14px !important;
+  line-height: 1.4 !important;
 }
 
 .project-alpha-dropdown {
@@ -518,7 +518,7 @@ section {
 /* Table */
 /* Ensure all table cells have equal width */
 .table th, .table td {
-  text-align: center; 
+  text-align: center;
   word-wrap: break-word; /* Prevents content from overflowing */
   width: 9%
 }
@@ -530,59 +530,59 @@ section {
 
 /* Media Queries ----------------------------- */
 @media (max-width: 800px) {
-    
+
   /* Force table to not be like tables anymore */
-  #mobile-stack table, 
-  #mobile-stack thead, 
-  #mobile-stack tbody, 
-  #mobile-stack th, 
-  #mobile-stack td, 
-  #mobile-stack tr { 
-    display: block; 
+  #mobile-stack table,
+  #mobile-stack thead,
+  #mobile-stack tbody,
+  #mobile-stack th,
+  #mobile-stack td,
+  #mobile-stack tr {
+    display: block;
   }
-  
-  #mobile-stack thead tr { 
+
+  #mobile-stack thead tr {
     display: none
   }
-  
-  #mobile-stack tr { 
-    border: 1px solid #ccc;  
-    border-radius: 4px; 
+
+  #mobile-stack tr {
+    border: 1px solid #ccc;
+    border-radius: 4px;
     margin-bottom: 1rem;
   }
-  
-  #mobile-stack td { 
+
+  #mobile-stack td {
     /* Behave  like a "row" */
     border: none;
     /* border-bottom: 1px solid #eee;  */
     position: relative;
-    padding-left: 10%; 
+    padding-left: 10%;
     white-space: normal;
     text-align: left !important;
   }
-  
-  #mobile-stack td:before { 
+
+  #mobile-stack td:before {
     position: absolute;
     top: 6px;
     left: 6px;
-    width: 45%; 
-    padding-right: 10px; 
+    width: 45%;
+    padding-right: 10px;
     white-space: nowrap;
     text-align:left;
     font-weight: bold;
   }
-  
+
   /* Label the data */
   /* #mobile-stack td:before { content: attr(data-title); } */
-  
+
   .table th, .table td {
-    text-align: center; 
+    text-align: center;
     width: 100% !important;
   }
-  
+
   .select2-container--bootstrap-5 {
-    display: block !important; 
-    width: 80% !important;  
+    display: block !important;
+    width: 80% !important;
   }
 }
 
@@ -610,7 +610,7 @@ section {
   align-items: center;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
   transition: background-color 0.3s, box-shadow 0.3s;
-  border: none; 
+  border: none;
 }
 
 .edit-icon-items:hover {
@@ -650,7 +650,7 @@ section {
 
 .editable input {
   width: 100%;
-  height: 1rem; 
+  height: 1rem;
   padding: 0; /* Remove padding to avoid shifting */
   border: none;
   background-color: transparent;
@@ -666,30 +666,30 @@ section {
 }
 
 .item-desc, .custom-fields {
-  border: 1px solid #ccc; 
-  border-radius: 8px; 
-  background-color: #f9f9f9; 
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #f9f9f9;
   padding: 4px 8px;
-  line-height: 1.4; 
+  line-height: 1.4;
 }
 
 .row {
   display: flex;
-  flex-wrap: wrap; 
-  justify-content: space-between; 
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 .row-items {
   display: flex;
-  flex-wrap: wrap; 
-  justify-content: space-between; 
+  flex-wrap: wrap;
+  justify-content: space-between;
   margin-bottom: 15px;
 }
 
 .button-group button {
-  width: 100px; 
-  text-align: center; 
-  padding: 5px 10px; 
+  width: 100px;
+  text-align: center;
+  padding: 5px 10px;
 }
 
 #header-mobile {
@@ -714,8 +714,8 @@ section {
 }
 
 .picture-placeholder {
-  /* width: 400px; 
-  height: 230px; 
+  /* width: 400px;
+  height: 230px;
   border: 2px dashed #ccc;
   display: flex;
   justify-content: center;
@@ -725,7 +725,7 @@ section {
   /* width: 440px; */
   flex: auto; /* Equal space for both placeholders */
   max-width: 100%; /* Limit the size to prevent overflow */
-  aspect-ratio: 4 / 3; 
+  aspect-ratio: 4 / 3;
   height: 250px;
   border: 2px dashed #ccc;
   display: flex;
@@ -747,7 +747,7 @@ section {
   width: 100%;
   height: 100%;
   object-fit: contain; /* Ensures the whole image is visible */
-  background-color: #f9f9f9; 
+  background-color: #f9f9f9;
   border-radius: 4px;
   transform-origin: center;
   transition: transform 0.2s ease;
@@ -870,15 +870,15 @@ section {
 
 .upload-area {
   border: 2px dashed #ccc;
-  background-color: #f9f9f9; 
+  background-color: #f9f9f9;
   padding: 30px;
   border-radius: 10px;
   cursor: pointer;
 }
 
 .upload-area.dragging {
-  border-color:#007bff; 
-  background-color:#eaf4ff; 
+  border-color:#007bff;
+  background-color:#eaf4ff;
 }
 
 .cloud-icon {
@@ -956,18 +956,18 @@ section {
   display: flex;
   align-items: center;
   justify-items: start;
-  gap: 1rem; 
+  gap: 1rem;
 }
 
 .file-detail {
   display: flex;
   align-items: start;
-  gap: 1rem; 
+  gap: 1rem;
 }
 
 .file-details .file-size {
   font-size: 12px;
-  color: #bbb; 
+  color: #bbb;
 }
 
 .photo-status {
@@ -981,8 +981,8 @@ section {
   width: 40px;
   height: 40px;
   margin-right: 10px;
-  object-fit: cover; 
-  border-radius: 5px; 
+  object-fit: cover;
+  border-radius: 5px;
 }
 
 .remove-photo-button {
@@ -1203,7 +1203,7 @@ div.gslide-media.gslide-inline {
 /* Media Queries ----------------------------- */
 @media (max-width: 768px) {
   .chart-container {
-    width: 50%; 
-    margin: 10px 0; 
+    width: 50%;
+    margin: 10px 0;
   }
 }
