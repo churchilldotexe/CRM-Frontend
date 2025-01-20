@@ -1072,10 +1072,13 @@
 
                             <!-- old to new  -->
                             <div class="row mt-3">
-                              <div class="header ls mb-3 text-uppercase">Attachments - Old</div>
+                              <div class="header ls mb-3 text-uppercase">Attachments</div>
                               <div class="pictures-section mb-3 d-flex flex-wrap justify-content-between" id="pictures-1">
 
-                                <div class="picture-placeholder d-flex flex-column" id="picture-1" onclick="document.getElementById('fileInput1').click();" ondragover="handleDragOver(event)" ondrop="handleFileDrop(event, 'picture-1')">
+
+                                <!-- <div class="picture-placeholder d-flex flex-column" id="picture-1" onclick="document.getElementById('fileInput1').click();" ondragover="handleDragOver(event)" ondrop="handleFileDrop(event, 'picture-1')"> -->
+
+                                <div class="picture-placeholder d-flex flex-column " id="picture-1" onclick="document.getElementById('fileInput1').click();" ondragover="handleDragOver(event)" ondrop="handleFileDrop(event, 'picture-1')">
                                   <!-- <p>Drag or Upload Picture</p>
                                   <i class="fas fa-image"></i> -->
 
@@ -1089,8 +1092,14 @@
                                 <input type="file" id="fileInput1" style="display: none;" accept="image/*" onchange="previewAndUploadImage(this, 'picture-1')">
 
 
-                                <div class="picture-placeholder d-flex" id="picture-2" style="display: none !important;" onclick="document.getElementById('fileInput2').click();" ondragover="handleDragOver(event)" ondrop="handleFileDrop(event, 'picture-2')">
-                                  <i class="fas fa-image"></i>
+                                <div class="picture-placeholder d-flex flex-column" id="picture-2" style="display: none !important;" onclick="document.getElementById('fileInput2').click();" ondragover="handleDragOver(event)" ondrop="handleFileDrop(event, 'picture-2')">
+                                  <!-- <i class="fas fa-image"></i> -->
+
+                                    <i class="cloud-icon">☁</i>
+                                    <p class="drag-text">Choose an image or drag and drop it here</p>
+                                    <p class="drag-text-hide" style="display: none;">Browse files to open images</p>
+                                    <p class="file-formats">JPEG, PNG formats, up to 50MB</p>
+                                    <button class="browse-btn">Browse File</button>
                                 </div>
 
                                 <input type="file" id="fileInput2" style="display: none;" accept="image/*" onchange="previewAndUploadImage(this, 'picture-2')">
@@ -1118,7 +1127,7 @@
 
                         <!-- <div class="flex-grow-1">
                           <div class="row">
-                            <div class="header ls mb-3 text-uppercase">Attachments</div>
+                            <div class="header ls mb-3 text-uppercase">Attachments - OLD</div>
 
                             <div class="file-uploader">
                               <div class="upload-area" id="uploadArea" onclick="document.getElementById('fileInput').click()">
@@ -2331,30 +2340,58 @@ function rotateImage(img) {
 
 // FIX: the removal of image bug
 function removePicture(pictureSection, inputId) {
-  // Clear the placeholder
-//   pictureSection.innerHTML = '<i class="fas fa-image"></i> ';
-  pictureSection.innerHTML = `
-  <i class="cloud-icon">☁</i>
-  <p class="drag-text">Choose an image or drag and drop it here</p>
-  <p class="drag-text-hide" style="display: none;">Browse files to open images</p>
-  <p class="file-formats">JPEG, PNG formats, up to 50MB</p>
-  <button class="browse-btn">Browse File</button>
-  `;
+    // Clear the placeholder
+   const defaultContent = `
+        <i class="cloud-icon">☁</i>
+        <p class="drag-text">Choose an image or drag and drop it here</p>
+        <p class="drag-text-hide" style="display: none;">Browse files to open images</p>
+        <p class="file-formats">JPEG, PNG formats, up to 50MB</p>
+        <button class="browse-btn">Browse File</button>
+        `;
 
+    let input = document.getElementById(inputId);
 
-  // Clear the file input value
-  const input = document.getElementById(inputId);
-  input.value = '';
+    if(pictureSection.id === 'picture-2'){
 
-  if (pictureSection.id === 'picture-1') {
+    pictureSection.innerHTML = defaultContent;
+        input.value = '';
+        return;
+    }
+
+    // from this point onwards, it is picture 1
+
     const picture2 = document.getElementById('picture-2');
-    const fileInput2 = document.getElementById('fileInput2');
-    picture2.classList.add('hidden');
 
-    // Clear content of picture 2 and its file input value
-    picture2.innerHTML = '<i class="fas fa-image"></i>';
-    fileInput2.value = '';
-  }
+    // means no 2nd image so we just reset to default.
+    if(picture2.querySelector('img') === null)
+    {
+        pictureSection.innerHTML= defaultContent;
+        return picture2.classList.add('hidden');
+    }
+
+    // at this point we are at picture1 and picture2 exist
+
+    //swap and reset picture2.
+    pictureSection.innerHTML = picture2.innerHTML;
+    picture2.innerHTML = defaultContent;
+
+    // Update the event listeners for the moved buttons
+    const newRemoveButton = pictureSection.querySelector('.remove-picture');
+    if (newRemoveButton) {
+        newRemoveButton.onclick = function(event) {
+            event.stopPropagation();
+            removePicture(pictureSection, inputId);
+        };
+    }
+
+    const newRotateButton = pictureSection.querySelector('.rotate-picture');
+    if (newRotateButton) {
+        newRotateButton.onclick = function(event) {
+            event.stopPropagation();
+            rotateImage(pictureSection.querySelector('img'));
+        };
+    }
+
 }
 
  // Function to upload the image to the server (optional)
@@ -2415,7 +2452,7 @@ function removePicture(pictureSection, inputId) {
   });
 
   // Pie Chart 3: Payment Methods
-  new Chart(document.getElementById('chartjs-doughnut-chart3').getContext('2d'), {
+  new Chart(document.getElementById('chartjs-doughnut-chart3')?.getContext('2d'), {
     type: 'pie',
     data: {
       labels: ['Credit Card', 'Bank Transfer', 'Cash'],
@@ -2429,7 +2466,7 @@ function removePicture(pictureSection, inputId) {
   });
 
   // Pie Chart 4: Invoice Status
-  new Chart(document.getElementById('chartjs-doughnut-chart4').getContext('2d'), {
+  new Chart(document.getElementById('chartjs-doughnut-chart4')?.getContext('2d'), {
     type: 'pie',
     data: {
       labels: ['Paid', 'Unpaid', 'Partially Paid'],
@@ -2467,11 +2504,11 @@ function removePicture(pictureSection, inputId) {
   }
 
   // Add event listeners for both cards
-  document.getElementById('editButton1').addEventListener('click', function() {
+  document.getElementById('editButton1')?.addEventListener('click', function() {
     toggleEditMode(this, 'projectName1', 'projectDetails1');
   });
 
-  document.getElementById('editButton2').addEventListener('click', function() {
+  document.getElementById('editButton2')?.addEventListener('click', function() {
     toggleEditMode(this, 'projectName2', 'projectDetails2');
   });
 </script>
