@@ -1116,7 +1116,7 @@
 
                         <!-- fix: change this -->
 
-                        <!-- <div class="flex-grow-1">
+                        <div class="flex-grow-1">
                           <div class="row">
                             <div class="header ls mb-3 text-uppercase">Attachments</div>
 
@@ -1139,7 +1139,7 @@
                             <div id="filePreview" class="file-container"></div>
 
                           </div>
-                        </div> -->
+                        </div>
                       </div>
                     </section>
 
@@ -2321,14 +2321,23 @@ function handleFileDrop(event, pictureSectionId) {
   // Trigger the change event for the input to handle the file
   fileInput.dispatchEvent(new Event('change'));
 }
-
+// FIX: the rotation implementation
 function rotateImage(img) {
   const currentRotation = img.dataset.rotation ? parseInt(img.dataset.rotation) : 0;
-  const newRotation = (currentRotation + 90) % 360;
+//   const newRotation = (currentRotation + 90) % 360;
+  // this implementation if 360 is hit the newRotation will be 0
+  // causing css to read it as 360 to 0
+  // thus the backward rotation animation (rotate from 360 to 0)
+  // removing it fixes the problem
+  const newRotation = (currentRotation + 90) ;
+  // caveat: many rotation will cause the number becomes bigger
+  // but as far as i know it still holds the same memory
+  // thus no performance hit.. it just visually have a bigger number.
+
   img.style.transform = `rotate(${newRotation}deg)`;
   img.dataset.rotation = newRotation;
 }
-
+// FIX: the removal of image bug
 function removePicture(pictureSection, inputId) {
   // Clear the placeholder
   pictureSection.innerHTML = '<i class="fas fa-image"></i>';
@@ -3020,7 +3029,7 @@ function handlePhotoUpload(event) {
     }, 300);
   }
 }
-
+//FIX: rotation bug
 function rotatePhoto(button) {
   const fileItem = button.closest('.photo-item');
   const imgElement = fileItem.querySelector('.file-icon');
@@ -3029,10 +3038,18 @@ function rotatePhoto(button) {
   let currentRotation = parseInt(imgElement.dataset.rotation) || 0;
 
   // Update the rotation angle
-  currentRotation = (currentRotation + 90) % 360;
+//   currentRotation = (currentRotation + 90) % 360;
+  // this causes bug to do a backward rotation from 360 to 0
+  // because of the ratation animation below which causes
+  // css to translate it as a animation from 360 to 0
+  // removing the modular(%) fixes this.. note: may cause huge number if too much rotation
+
+  currentRotation += 90;
+
+//   if(currentRotation === 360)currentRotation = 0;
 
   // Apply the new rotation
-  imgElement.style.transform = `rotate(${currentRotation}deg)`;
+//   imgElement.style.transform = `rotate(${currentRotation}deg)`;
 
   // Update the data attribute with the new rotation
   imgElement.dataset.rotation = currentRotation;
