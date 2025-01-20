@@ -1073,7 +1073,7 @@
                             <!-- old to new  -->
                             <div class="row mt-3">
                               <div class="header ls mb-3 text-uppercase">Attachments</div>
-                              <div class="pictures-section mb-3 d-flex flex-wrap justify-content-between" id="pictures-1">
+                              <div class="pictures-section mb-3" id="pictures-1">
 
 
                                 <!-- <div class="picture-placeholder d-flex flex-column" id="picture-1" onclick="document.getElementById('fileInput1').click();" ondragover="handleDragOver(event)" ondrop="handleFileDrop(event, 'picture-1')"> -->
@@ -1089,7 +1089,7 @@
                                     <button class="browse-btn">Browse File</button>
                                 </div>
 
-                                <input type="file" id="fileInput1" style="display: none;" accept="image/*" onchange="previewAndUploadImage(this, 'picture-1')">
+                                <input multiple="" type="file" id="fileInput1" style="display: none;" accept="image/*" onchange="previewAndUploadImage(this, 'picture-1')">
 
 
                                 <div class="picture-placeholder d-flex flex-column" id="picture-2" style="display: none !important;" onclick="document.getElementById('fileInput2').click();" ondragover="handleDragOver(event)" ondrop="handleFileDrop(event, 'picture-2')">
@@ -1106,9 +1106,7 @@
                               </div>
 
 
-                                <div id="filePreview" class="file-container">
-
-                              </div>
+                                <div id="filePreview" class="file-container"> </div>
                             </div>
 
 
@@ -1123,7 +1121,6 @@
                           </div>
                         </div>
 
-                        <!-- fix: change this -->
 
                         <!-- <div class="flex-grow-1">
                           <div class="row">
@@ -2241,6 +2238,7 @@
 <script>
  // Preview and Upload Image
  function previewAndUploadImage(input, pictureSectionId) {
+
   if (input.files && input.files[0]) {
     const file = input.files[0];
     const reader = new FileReader();
@@ -2330,6 +2328,7 @@ function handleFileDrop(event, pictureSectionId) {
   // Trigger the change event for the input to handle the file
   fileInput.dispatchEvent(new Event('change'));
 }
+
 function rotateImage(img) {
   const currentRotation = img.dataset.rotation ? parseInt(img.dataset.rotation) : 0;
   const newRotation = (currentRotation + 90) ;
@@ -2338,7 +2337,6 @@ function rotateImage(img) {
   img.dataset.rotation = newRotation;
 }
 
-// FIX: the removal of image bug
 function removePicture(pictureSection, inputId) {
     // Clear the placeholder
    const defaultContent = `
@@ -2353,7 +2351,7 @@ function removePicture(pictureSection, inputId) {
 
     if(pictureSection.id === 'picture-2'){
 
-    pictureSection.innerHTML = defaultContent;
+        pictureSection.innerHTML = defaultContent;
         input.value = '';
         return;
     }
@@ -3066,7 +3064,6 @@ function handlePhotoUpload(event) {
     }, 300);
   }
 }
-//FIX: rotation bug
 function rotatePhoto(button) {
   const fileItem = button.closest('.photo-item');
   const imgElement = fileItem.querySelector('.file-icon');
@@ -3074,19 +3071,10 @@ function rotatePhoto(button) {
   // Get the current rotation angle from the data attribute
   let currentRotation = parseInt(imgElement.dataset.rotation) || 0;
 
-  // Update the rotation angle
-//   currentRotation = (currentRotation + 90) % 360;
-  // this causes bug to do a backward rotation from 360 to 0
-  // because of the ratation animation below which causes
-  // css to translate it as a animation from 360 to 0
-  // removing the modular(%) fixes this.. note: may cause huge number if too much rotation
-
   currentRotation += 90;
 
-//   if(currentRotation === 360)currentRotation = 0;
-
   // Apply the new rotation
-//   imgElement.style.transform = `rotate(${currentRotation}deg)`;
+  imgElement.style.transform = `rotate(${currentRotation}deg)`;
 
   // Update the data attribute with the new rotation
   imgElement.dataset.rotation = currentRotation;
