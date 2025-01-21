@@ -9,31 +9,30 @@
 }
 
 /* Specific Styles for Item Description and Custom Fields */
-[data-bs-theme=dark] .item-desc,
-[data-bs-theme=dark] .custom-fields {
+[data-bs-theme="dark"] .item-desc,
+[data-bs-theme="dark"] .custom-fields {
   border: 1px solid #3c4652;
   background-color: #121e2d;
   color: #f9f9f9;
 }
 
 /* Styles for Placeholders */
-[data-bs-theme=light] .picture-placeholder,
-[data-bs-theme=light] .file-placeholder {
+[data-bs-theme="light"] .picture-placeholder,
+[data-bs-theme="light"] .file-placeholder {
   background-color: #f9f9f9;
   color: #333; /* Ensure light mode placeholder text is visible */
 }
 
-[data-bs-theme=dark] .picture-placeholder,
-[data-bs-theme=dark] .file-placeholder {
+[data-bs-theme="dark"] .picture-placeholder,
+[data-bs-theme="dark"] .file-placeholder {
   border: 2px dashed #3c4652;
   background-color: #121e2d;
   color: #f9f9f9;
 }
 
-[data-bs-theme=dark] .items-card-text.editable {
+[data-bs-theme="dark"] .items-card-text.editable {
   color: #333;
 }
-
 
 /*-----------------------------------------------
 |   Section, Navbar
@@ -53,7 +52,7 @@ section {
 }
 
 .navbar-vertical.navbar-expand-xl .navbar-collapse {
-  WIDTH: 4REM;
+  width: 4rem;
 }
 
 .navbar-vertical.navbar-expand-xl {
@@ -86,7 +85,9 @@ section {
   color: #007bff;
 }
 
-.navbar-glass, #navbarStandard, .navbar-collapse {
+.navbar-glass,
+#navbarStandard,
+.navbar-collapse {
   z-index: 101; /*to have a higher stacking context than #list-example-desktop*/
 }
 
@@ -98,7 +99,7 @@ section {
   transition: fill 0.3s ease; /* Optional: Smooth color transition */
 }
 
-#list-example-mobile  {
+#list-example-mobile {
   margin-top: 70px;
   border-radius: 5px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -157,7 +158,7 @@ section {
 -----------------------------------------------*/
 
 /* Card container spacing for sticky menu */
-#cardcontainer{
+#cardcontainer {
   padding-top: 30px;
 }
 
@@ -170,18 +171,20 @@ section {
   display: flex;
   flex-direction: column;
   gap: 8px;
-  position: relative;  /* Allow absolute positioning of the edit button */
+  position: relative; /* Allow absolute positioning of the edit button */
 }
 
 .project-alpha-editable {
   border: none;
   outline: none;
-  width: 50%;  /* Ensures it matches other fields' width */
+  width: 50%; /* Ensures it matches other fields' width */
   font-size: 14px;
   line-height: 1.4;
   padding: 4px 8px;
   border-radius: 6px;
-  transition: background-color 0.3s, box-shadow 0.3s;
+  transition:
+    background-color 0.3s,
+    box-shadow 0.3s;
   cursor: text;
   background-color: #f9f9f9;
 }
@@ -221,7 +224,9 @@ section {
   color: #374151;
   cursor: pointer;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
-  transition: background-color 0.3s, box-shadow 0.3s;
+  transition:
+    background-color 0.3s,
+    box-shadow 0.3s;
 }
 
 .project-alpha-action-button:hover {
@@ -236,20 +241,22 @@ section {
   line-height: 1.4;
 }
 
-.text-input, .text-input-title {
+.text-input,
+.text-input-title {
   width: 70%;
   display: none;
-
 }
 
 /* Set default width for the display and dropdown */
-#customer-display, #customer-dropdown {
+#customer-display,
+#customer-dropdown {
   width: 100px; /* Adjust as necessary */
 }
 
 /* Select2 width */
 /* Set default width for the display and dropdown */
- #customer-display, #customer-dropdown {
+#customer-display,
+#customer-dropdown {
   width: 70%; /* Adjust as necessary */
 }
 
@@ -260,13 +267,13 @@ section {
 
 /* Apply font-size and line-height to Select2 container */
 .select2-container--bootstrap-5 .select2-selection__rendered {
-  font-size: 14px !important;  /* Set font size */
+  font-size: 14px !important; /* Set font size */
   line-height: 1.4 !important; /* Set line height */
 }
 
 /* Apply font-size and line-height to dropdown options */
 .select2-container--bootstrap-5 .select2-results__option {
-  font-size: 14px !important;  /* Set font size */
+  font-size: 14px !important; /* Set font size */
   line-height: 1.4 !important; /* Set line height */
 }
 
@@ -288,7 +295,7 @@ section {
 }
 
 .form-control-dates {
-  font-family: inherit !important;  /* Use the default font of the parent */
+  font-family: inherit !important; /* Use the default font of the parent */
   font-size: 14px !important;
   line-height: 1.4 !important;
 }
@@ -304,7 +311,9 @@ section {
   border: 1px solid #d1d5db;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
   cursor: pointer;
-  transition: background-color 0.3s, box-shadow 0.3s;
+  transition:
+    background-color 0.3s,
+    box-shadow 0.3s;
   display: none;
 }
 
@@ -315,12 +324,12 @@ section {
 
 .project-alpha-actions {
   display: flex;
-  flex-direction: column;  /* Stack the action buttons vertically */
-  align-items: flex-end;   /* Align the buttons to the right */
-  gap: 8px;  /* Space between the buttons */
+  flex-direction: column; /* Stack the action buttons vertically */
+  align-items: flex-end; /* Align the buttons to the right */
+  gap: 8px; /* Space between the buttons */
   position: absolute;
   top: 20px; /* Position the action buttons at the top */
-  right: 20px;  /* Position the action buttons to the right */
+  right: 20px; /* Position the action buttons to the right */
 }
 
 .project-alpha-edit-icon {
@@ -336,9 +345,11 @@ section {
   justify-content: center;
   align-items: center;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
-  transition: background-color 0.3s, box-shadow 0.3s;
+  transition:
+    background-color 0.3s,
+    box-shadow 0.3s;
   position: absolute;
-  bottom: 20px;  /* Position it at the bottom */
+  bottom: 20px; /* Position it at the bottom */
   right: 20px; /* Keep it aligned to the right */
   border: none;
 }
@@ -433,12 +444,12 @@ section {
   background-color: #f0f0f0;
 }
 
-.d-md-block{
-  padding-top: 10px;;
+.d-md-block {
+  padding-top: 10px;
 }
 
 /* Data picker */
-.form-control.datetimepicker{
+.form-control.datetimepicker {
   width: 322px; /* Adjust as necessary */
 }
 
@@ -464,10 +475,10 @@ section {
 
 @media (min-width: 601px) {
   .project-alpha-actions {
-      flex-direction: column;
-      align-items: flex-end;
-      max-height: calc(100% - 90px);
-      overflow-y: auto;
+    flex-direction: column;
+    align-items: flex-end;
+    max-height: calc(100% - 90px);
+    overflow-y: auto;
   }
   .col-md-6 {
     margin-bottom: 0; /* Adds space between cards */
@@ -476,9 +487,9 @@ section {
 
 @media (max-width: 600px) {
   .project-alpha-actions {
-      justify-content: flex-start;
-      position: static;
-      margin-top: 20px;
+    justify-content: flex-start;
+    position: static;
+    margin-top: 20px;
   }
   .col-md-6 {
     margin-bottom: 20px; /* Ensures no gap between cards on larger screens */
@@ -490,7 +501,6 @@ section {
     margin-top: 1rem;
   }
 }
-
 
 /*-----------------------------------------------
 |   Entities
@@ -517,10 +527,11 @@ section {
 
 /* Table */
 /* Ensure all table cells have equal width */
-.table th, .table td {
+.table th,
+.table td {
   text-align: center;
   word-wrap: break-word; /* Prevents content from overflowing */
-  width: 9%
+  width: 9%;
 }
 
 /* Styling buttons inside table cells */
@@ -530,7 +541,6 @@ section {
 
 /* Media Queries ----------------------------- */
 @media (max-width: 800px) {
-
   /* Force table to not be like tables anymore */
   #mobile-stack table,
   #mobile-stack thead,
@@ -542,7 +552,7 @@ section {
   }
 
   #mobile-stack thead tr {
-    display: none
+    display: none;
   }
 
   #mobile-stack tr {
@@ -568,14 +578,15 @@ section {
     width: 45%;
     padding-right: 10px;
     white-space: nowrap;
-    text-align:left;
+    text-align: left;
     font-weight: bold;
   }
 
   /* Label the data */
   /* #mobile-stack td:before { content: attr(data-title); } */
 
-  .table th, .table td {
+  .table th,
+  .table td {
     text-align: center;
     width: 100% !important;
   }
@@ -585,7 +596,6 @@ section {
     width: 80% !important;
   }
 }
-
 
 /*-----------------------------------------------
 |   Items
@@ -609,7 +619,9 @@ section {
   justify-content: center;
   align-items: center;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
-  transition: background-color 0.3s, box-shadow 0.3s;
+  transition:
+    background-color 0.3s,
+    box-shadow 0.3s;
   border: none;
 }
 
@@ -645,7 +657,7 @@ section {
 
 /* Edit mode - light blue */
 .editable.editing {
-  background-color: #D9EAFD;
+  background-color: #d9eafd;
 }
 
 .editable input {
@@ -665,7 +677,8 @@ section {
   width: 80%;
 }
 
-.item-desc, .custom-fields {
+.item-desc,
+.custom-fields {
   border: 1px solid #ccc;
   border-radius: 8px;
   background-color: #f9f9f9;
@@ -698,12 +711,15 @@ section {
 
 /* Pictures Section */
 
-
 .pictures-section {
   display: grid;
   width: 100%;
-  grid-template-columns: repeat(auto-fit, minmax(300px,1fr)); /* ensure a responsive design */
-  max-height: 700px; /* to ensure there is no overflow */
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(300px, 1fr)
+  ); /* ensure a responsive design */
+  /* max-height: 350px; */
+  /* to ensure there is no overflow */
   gap: 32px;
 }
 
@@ -727,6 +743,7 @@ section {
   /* width: 440px; */
   flex: auto; /* Equal space for both placeholders */
   max-width: 100%; /* Limit the size to prevent overflow */
+  max-height: 250px;
   width: 100%;
   height: 100%;
   /* aspect-ratio: 4 / 3; */
@@ -741,7 +758,9 @@ section {
   cursor: pointer;
   border-radius: 4px;
   overflow: hidden;
-  transition: border-color 0.1s ease, background-color 0.1s ease;
+  transition:
+    border-color 0.1s ease,
+    background-color 0.1s ease;
 }
 
 .picture-placeholder i {
@@ -803,66 +822,66 @@ section {
 
 /* File */
 .file-placeholder {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 25px;
-    border: 2px dashed #ccc;
-    cursor: pointer;
-    margin-right: 15px;
-    margin-bottom: 15px;
-    position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 25px;
+  border: 2px dashed #ccc;
+  cursor: pointer;
+  margin-right: 15px;
+  margin-bottom: 15px;
+  position: relative;
 }
 .file-placeholder i {
-    font-size: 48px; /* Larger icon for better visibility */
-    color: #777;
+  font-size: 48px; /* Larger icon for better visibility */
+  color: #777;
 }
 .file-preview-section {
-    display: flex;
-    flex-wrap: wrap;
-    margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 10px;
 }
 .file-item {
-    display: flex;
-    align-items: center;
-    margin-right: 15px;
-    margin-bottom: 10px;
-    position: relative;
+  display: flex;
+  align-items: center;
+  margin-right: 15px;
+  margin-bottom: 10px;
+  position: relative;
 }
 .file-item img {
-    max-width: 100px;
-    max-height: 100px;
-    margin-right: 10px;
-    border: 1px solid #ccc;
+  max-width: 100px;
+  max-height: 100px;
+  margin-right: 10px;
+  border: 1px solid #ccc;
 }
 .file-item .file-info {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 .file-item i {
-    font-size: 24px;
-    margin-right: 10px;
+  font-size: 24px;
+  margin-right: 10px;
 }
 .file-item p {
-    margin: 0;
+  margin: 0;
 }
 
 /* Remove button */
 .file-item .remove-button {
-    position: absolute;
-    top: -10px;
-    right: -10px;
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-    border: none;
-    border-radius: 50%;
-    cursor: pointer;
-    width: 20px;
-    height: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /* Pictures - New */
@@ -883,8 +902,8 @@ section {
 }
 
 .upload-area.dragging {
-  border-color:#007bff;
-  background-color:#eaf4ff;
+  border-color: #007bff;
+  background-color: #eaf4ff;
 }
 
 .cloud-icon {
@@ -1203,7 +1222,7 @@ div.gslide-media.gslide-inline {
 }
 
 .ginlined-content {
-  height: 580px !important
+  height: 580px !important;
 }
 
 /* Media Queries ----------------------------- */
