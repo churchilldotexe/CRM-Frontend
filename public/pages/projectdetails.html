@@ -327,14 +327,12 @@
                                 <div class="notification-avatar">
                                   <div class="avatar avatar-xl me-3">
                                     <img class="rounded-circle" src="../assets/img/logos/oxford.png" alt="" />
-
                                   </div>
                                 </div>
                                 <div class="notification-body">
                                   <p class="mb-1"><strong>University of Oxford</strong> created an event : "Causal Inference Hilary
                                     2019"</p>
                                   <span class="notification-time"><span class="me-2" role="img" aria-label="Emoji">✌️</span>1w</span>
-
                                 </div>
                               </a>
 
@@ -827,7 +825,7 @@
                                 <!-- Pagination or other content can be added here -->
                               </div>
                             </div>
-                          </div>
+                          <!-- </div> -->
                         </section>
                         <br>
 
@@ -1071,45 +1069,10 @@
                               </div>
                             </div>
 
-                            <!--TODO: should take up the whole width old to new  -->
-                            <div style="max-width: 100%;" class="row mt-3">
-                              <div class="header ls mb-3 text-uppercase">Attachments</div>
-                              <div class="pictures-section mb-3 d-grid" id="pictures-1">
-
-
-                                <div class="picture-placeholder d-flex flex-column " id="picture-1" onclick="document.getElementById('fileInput1').click();" ondragover="handleDragOver(event)" ondrop="handleFileDrop(event, 'picture-1')">
-                                  <!-- <p>Drag or Upload Picture</p>
-                                  <i class="fas fa-image"></i> -->
-
-                                    <i class="cloud-icon">☁</i>
-                                    <p class="drag-text">Choose an image or drag and drop it here</p>
-                                    <p class="drag-text-hide" style="display: none;">Browse files to open images</p>
-                                    <p class="file-formats">JPEG, PNG formats, up to 50MB</p>
-                                    <button class="browse-btn">Browse File</button>
-                                </div>
-
-                                <input multiple="" type="file" id="fileInput1" style="display: none;" accept="image/*" onchange="previewAndUploadImage(this, 'picture-1')">
-
-
-                                <div class="picture-placeholder d-flex flex-column" id="picture-2" style="display: none !important;" onclick="document.getElementById('fileInput2').click();" ondragover="handleDragOver(event)" ondrop="handleFileDrop(event, 'picture-2')">
-                                  <!-- <i class="fas fa-image"></i> -->
-
-                                    <i class="cloud-icon">☁</i>
-                                    <p class="drag-text">Choose an image or drag and drop it here</p>
-                                    <p class="drag-text-hide" style="display: none;">Browse files to open images</p>
-                                    <p class="file-formats">JPEG, PNG formats, up to 50MB</p>
-                                    <button class="browse-btn">Browse File</button>
-                                </div>
-
-                                <input type="file" id="fileInput2" style="display: none;" accept="image/*" onchange="previewAndUploadImage(this, 'picture-2')">
-                              </div>
-
-
-                                <div id="filePreview" class="file-container"> </div>
-                            </div>
 
 
                           </div>
+
                         </div>
                         <div class="col">
                           <div class="button-group mt-2 d-flex flex-column justify-content-center align-items-end">
@@ -1120,6 +1083,41 @@
                           </div>
                         </div>
 
+                    <div style="width: 100%;" class="row mt-3 ">
+                      <div class="header ls mb-3 text-uppercase">Attachments</div>
+                      <div class="pictures-section mb-3 d-grid" id="pictures-1">
+
+
+                        <div class="picture-placeholder d-flex flex-column " id="picture-1" onclick="document.getElementById('fileInput1').click();" ondragover="handleDragOver(event)" ondrop="handleFileDrop(event, 'picture-1')">
+                          <!-- <p>Drag or Upload Picture</p>
+<i class="fas fa-image"></i> -->
+
+                          <i class="cloud-icon">☁</i>
+                          <p class="drag-text">Choose an image or drag and drop it here</p>
+                          <p class="drag-text-hide" style="display: none;">Browse files to open images</p>
+                          <p class="file-formats">JPEG, PNG formats, up to 50MB</p>
+                          <button class="browse-btn">Browse File</button>
+                        </div>
+
+                        <input multiple="" type="file" id="fileInput1" style="display: none;" accept="image/*" onchange="previewAndUploadImage(this, 'picture-1')">
+
+
+                        <div class="picture-placeholder d-flex flex-column" id="picture-2" style="display: none !important;" onclick="document.getElementById('fileInput2').click();" ondragover="handleDragOver(event)" ondrop="handleFileDrop(event, 'picture-2')">
+                          <!-- <i class="fas fa-image"></i> -->
+
+                          <i class="cloud-icon">☁</i>
+                          <p class="drag-text">Choose an image or drag and drop it here</p>
+                          <p class="drag-text-hide" style="display: none;">Browse files to open images</p>
+                          <p class="file-formats">JPEG, PNG formats, up to 50MB</p>
+                          <button class="browse-btn">Browse File</button>
+                        </div>
+
+                        <input type="file" id="fileInput2" style="display: none;" accept="image/*" onchange="previewAndUploadImage(this, 'picture-2')">
+                      </div>
+
+
+                      <div id="filePreview" class="file-container"> </div>
+                    </div>
 
                         <!-- <div class="flex-grow-1">
                           <div class="row">
@@ -1225,9 +1223,9 @@
                                     <button class="btn btn-tertiary ps-1 pe-1 pw-1 pn-1" type="button" data-bs-toggle="tooltip" data-bs-placement="top" title="Edit"><span class="fas fa-edit" data-fa-transform="shrink-2"></span></button>
                                     <button class="btn btn-tertiary ps-1 pe-1 pw-1 pn-1" type="button" data-bs-toggle="tooltip" data-bs-placement="top" title="Remove"><span class="fas fa-times" data-fa-transform="shrink-2"></span></button>
                                   </td>
-                                </td>
-                                </tr>
-                                <tr class="btn-reveal-trigger">
+                              <!-- </td> -->
+                              </tr>
+                              <tr class="btn-reveal-trigger">
                                   <th class="align-middle white-space-nowrap name"><a href="../../app/e-commerce/customer-details.html">Client Meeting - Meeting</a></th>
                                   <td class="align-middle white-space-nowrap email">John Doe, Jane Smith, Bob	</td>
                                   <td class="align-middle white-space-nowrap quantity">Office A	</td>
@@ -1238,12 +1236,12 @@
                                       <span class="ms-1 fa fa-check" data-fa-transform="shrink-2"></span>
                                     </span>
                                   </td>
-                                    <td class="align-middle white-space-nowrap actions">
-                                      <button class="btn btn-tertiary ps-1 pe-1 pw-1 pn-1" type="button" data-bs-toggle="tooltip" data-bs-placement="top" title="Edit"><span class="fas fa-edit" data-fa-transform="shrink-2"></span></button>
-                                      <button class="btn btn-tertiary ps-1 pe-1 pw-1 pn-1" type="button" data-bs-toggle="tooltip" data-bs-placement="top" title="Remove"><span class="fas fa-times" data-fa-transform="shrink-2"></span></button>
-                                    </td>
+                                  <td class="align-middle white-space-nowrap actions">
+                                    <button class="btn btn-tertiary ps-1 pe-1 pw-1 pn-1" type="button" data-bs-toggle="tooltip" data-bs-placement="top" title="Edit"><span class="fas fa-edit" data-fa-transform="shrink-2"></span></button>
+                                    <button class="btn btn-tertiary ps-1 pe-1 pw-1 pn-1" type="button" data-bs-toggle="tooltip" data-bs-placement="top" title="Remove"><span class="fas fa-times" data-fa-transform="shrink-2"></span></button>
                                   </td>
-                                  </tr>
+                                  <!-- </td> -->
+                              </tr>
 
 
 
@@ -1324,41 +1322,41 @@
                       </div>
                     </div>
 
-                    <h5 class="mt-3">File List</h5>
-                    <div class="files">
-                      <div class="file-upload">
-                        <label for="fileInput">Upload Files:</label>
-                        <input type="file" id="fileInput" multiple onchange="handleFileSelection(event)">
-                      </div>
-
-                      <div class="file-viewer">
-                        <div class="file-list">
-                          <h6>Files</h6>
-                          <ul id="fileList">
+                    <!-- <h5 class="mt-3">File List</h5> -->
+                    <!-- <div class="files"> -->
+                    <!--   <div class="file-upload"> -->
+                    <!--     <label for="fileInput">Upload Files:</label> -->
+                    <!--     <input type="file" id="fileInput" multiple onchange="handleFileSelection(event)"> -->
+                    <!--   </div> -->
+                    <!---->
+                    <!--   <div class="file-viewer"> -->
+                    <!--     <div class="file-list"> -->
+                    <!--       <h6>Files</h6> -->
+                    <!--       <ul id="fileList"> -->
                             <!-- File items will be added here dynamically -->
-                          </ul>
-                        </div>
-                      </div>
-
+                    <!--       </ul> -->
+                    <!--     </div> -->
+                    <!--   </div> -->
+                    <!---->
                       <!-- Modal -->
-                      <div class="modal fade" id="filePreviewModal" tabindex="-1" role="dialog" aria-hidden="true">
-                        <div class="modal-dialog modal-dialog-centered" role="document" style="max-width: 1000px;">
-                          <div class="modal-content position-relative">
-                            <div class="position-absolute top-0 end-0 mt-2 me-2 z-1">
-                              <button class="btn-close btn btn-sm btn-circle d-flex flex-center transition-base" data-bs-dismiss="modal" aria-label="Close"></button>
-                            </div>
-                            <div class="modal-body p-0">
-                              <div class="rounded-top-3 py-3 ps-4 pe-6 bg-body-tertiary">
-                                <div class="header mb-1" id="modalExampleDemoLabel">File Preview</div>
-                              </div>
-                              <div id="modalContent" class="p-4">
+                    <!--   <div class="modal fade" id="filePreviewModal" tabindex="-1" role="dialog" aria-hidden="true"> -->
+                    <!--     <div class="modal-dialog modal-dialog-centered" role="document" style="max-width: 1000px;"> -->
+                    <!--       <div class="modal-content position-relative"> -->
+                    <!--         <div class="position-absolute top-0 end-0 mt-2 me-2 z-1"> -->
+                    <!--           <button class="btn-close btn btn-sm btn-circle d-flex flex-center transition-base" data-bs-dismiss="modal" aria-label="Close"></button> -->
+                    <!--         </div> -->
+                    <!--         <div class="modal-body p-0"> -->
+                    <!--           <div class="rounded-top-3 py-3 ps-4 pe-6 bg-body-tertiary"> -->
+                    <!--             <div class="header mb-1" id="modalExampleDemoLabel">File Preview</div> -->
+                    <!--           </div> -->
+                    <!--           <div id="modalContent" class="p-4"> -->
                                 <!-- Preview content will be dynamically inserted here -->
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
+                    <!--           </div> -->
+                    <!--         </div> -->
+                    <!--       </div> -->
+                    <!--     </div> -->
+                    <!--   </div> -->
+                    <!-- </div> -->
                   </section>
 
 
