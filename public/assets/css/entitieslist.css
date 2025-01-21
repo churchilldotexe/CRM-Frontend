@@ -124,6 +124,10 @@ section {
   font-size: 14px;
 }
 
+.hide-dropdown-caret::after {
+  display: none;
+}
+
 /* Media Queries ----------------------------- */
 @media (min-width: 768px) and (max-width: 1024px) {
   #list-example-desktop {
@@ -1199,7 +1203,9 @@ canvas {
   height: auto; /* Maintain aspect ratio */
 }
 
-/* Gallery */
+/*-----------------------------------------------
+|   Gallery
+-----------------------------------------------*/
 .file-preview {
   display: flex;
   flex-direction: column;
@@ -1225,10 +1231,51 @@ div.gslide-media.gslide-inline {
   height: 580px !important;
 }
 
+.gallery-dropdown-menu {
+  padding: 0.2rem 0;
+  margin: 0;
+  list-style: none;
+  min-width: 0;
+}
+
+.gallery-menu {
+  display: flex; /* Ensure it's part of the DOM for transitions */
+  /* Hide initially */
+  visibility: hidden;
+  /* Fully transparent */
+  opacity: 0;
+  padding: 0.2rem 0;
+  margin: 0;
+  background: transparent;
+  border: none;
+  -webkit-box-shadow: unset;
+  box-shadow: unset;
+  min-width: 0;
+  list-style: none;
+  position: absolute;
+  top: 0.3rem;
+  right: 0.5rem;
+}
+
+.gallery-menu li {
+  border-radius: var(--falcon-dropdown-border-radius);
+  background-color: var(--falcon-dropdown-bg);
+}
+
 /* Media Queries ----------------------------- */
 @media (max-width: 768px) {
   .chart-container {
     width: 50%;
     margin: 10px 0;
+  }
+}
+
+@media (min-width: 992px) {
+  .post1:hover .gallery-menu {
+    visibility: visible;
+    opacity: 100;
+    transition:
+      visibility 0s linear 0.15s,
+      opacity 0.25s ease-in-out;
   }
 }
