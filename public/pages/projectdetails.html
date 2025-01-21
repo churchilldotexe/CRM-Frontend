@@ -914,7 +914,6 @@
                             </div>
                           </div>
 
-                          <!-- TODO:  this causes issue to the Attachment sections but this is also necessary for this section-->
                           <div class="border-top mt-2 pt-3">
                             <div class="row" id="header-mobile">
                               <div class="col-4 col-sm-4 col-md">
@@ -1088,9 +1087,9 @@
                       <div class="pictures-section mb-3 d-grid" id="pictures-1">
 
 
-                        <div class="picture-placeholder d-flex flex-column " id="picture-1" onclick="document.getElementById('fileInput1').click();" ondragover="handleDragOver(event)" ondrop="handleFileDrop(event, 'picture-1')">
-                          <!-- <p>Drag or Upload Picture</p>
-<i class="fas fa-image"></i> -->
+                        <div class="picture-placeholder flex-column " id="picture-1" onclick="document.getElementById('fileInput1').click();" ondragover="handleDragOver(event)" ondrop="handleFileDrop(event, 'picture-1')">
+                            <!-- <p>Drag or Upload Picture</p>
+                              <i class="fas fa-image"></i> -->
 
                           <i class="cloud-icon">☁</i>
                           <p class="drag-text">Choose an image or drag and drop it here</p>
@@ -1257,10 +1256,13 @@
                     <h5>Gallery Sample</h5>
 
                     <div class="row mx-n1">
-                      <div  class="col-6 p-1 position-relative">
+
+                      <!-- First Image -->
+                      <!-- <div id="gallery-item-1"  class=" col-6 p-1 position-relative"> -->
+                      <div id="gallery-item-1" class="gallery-container d-flex col-6 p-1 position-relative">
                         <!-- in desktop if this is hovered the ul with class gallery-menu will appear -->
-                        <a class="post1" href="../assets/img/generic/4.jpg" data-gallery="gallery-1">
-                          <img class="img-fluid rounded" src="../assets/img/generic/4.jpg" alt="" />
+                        <a class="post1 " href="../assets/img/generic/4.jpg" data-gallery="gallery-1">
+                          <img class="img-fluid rounded gallery-item" src="../assets/img/generic/4.jpg" alt="" />
                           
 
                           <!-- Desktop menu -->
@@ -1273,7 +1275,7 @@
 
                               </li>
                               <li>
-                                <button class="dropdown-item"  onclick="event.stopPropagation()">
+                                <button class="dropdown-item"  onclick="removeGalleryNode(event, 'gallery-item-1')">
                                   <!-- <span class="far fa-trash-alt text-danger fs-8"></span> -->
                                   Delete
                                 </button>
@@ -1303,7 +1305,7 @@
 
                                 </li>
                                 <li>
-                                  <button class="dropdown-item"  onclick="event.stopPropagation()">
+                                  <button class="dropdown-item"  onclick="removeGalleryNode(event, 'gallery-item-1')">
                                     <!-- <span class="far fa-trash-alt text-danger fs-8"></span> -->
                                     Delete
                                   </button>
@@ -1315,9 +1317,10 @@
                         </a>
                       </div>
 
-                      <div class="col-6 p-1 position-relative">
+                    <!-- Second Image -->
+                      <div id="gallery-item-2" class="gallery-container d-flex col-6 p-1 position-relative">
                         <a class="post1" href="../assets/img/generic/5.jpg" data-gallery="gallery-1">
-                          <img class="img-fluid rounded" src="../assets/img/generic/5.jpg" alt="" />
+                          <img class="img-fluid rounded gallery-item" src="../assets/img/generic/5.jpg" alt="" />
 
 
                           <!-- Desktop menu -->
@@ -1330,7 +1333,7 @@
 
                               </li>
                               <li>
-                                <button class="dropdown-item"  onclick="event.stopPropagation()">
+                                <button class="dropdown-item"  onclick="removeGalleryNode(event, 'gallery-item-2')">
                                   <!-- <span class="far fa-trash-alt text-danger fs-8"></span> -->
                                   Delete
                                 </button>
@@ -1360,7 +1363,7 @@
 
                                 </li>
                                 <li>
-                                  <button class="dropdown-item"  onclick="event.stopPropagation()">
+                                  <button class="dropdown-item"  onclick="removeGalleryNode(event, 'gallery-item-2')">
                                     <!-- <span class="far fa-trash-alt text-danger fs-8"></span> -->
                                     Delete
                                   </button>
@@ -1370,12 +1373,13 @@
                             </div>
 
                         </a>
-
                       </div>
 
-                      <div class="col-4 p-1 position-relative">
-                        <a class="post1" href="../assets/img/gallery/4.jpg" data-gallery="gallery-1">
-                          <img class="img-fluid rounded" src="../assets/img/gallery/4.jpg" alt="" />
+                      <!-- Third Image -->
+                      <!-- <div id="gallery-item-3" class="col-4 p-1 position-relative"> -->
+                      <div id="gallery-item-3" class="gallery-container d-flex col-4 p-1 position-relative">
+                        <a class="post1 " href="../assets/img/gallery/4.jpg" data-gallery="gallery-1">
+                          <img class="img-fluid rounded gallery-item "  src="../assets/img/gallery/4.jpg" alt="" />
 
 
                           <!-- Desktop menu -->
@@ -1388,7 +1392,7 @@
 
                               </li>
                               <li>
-                                <button class="dropdown-item"  onclick="event.stopPropagation()">
+                                <button class="dropdown-item"  onclick="removeGalleryNode(event, 'gallery-item-3')">
                                   <!-- <span class="far fa-trash-alt text-danger fs-8"></span> -->
                                   Delete
                                 </button>
@@ -1418,7 +1422,7 @@
 
                                 </li>
                                 <li>
-                                  <button class="dropdown-item"  onclick="event.stopPropagation()">
+                                  <button class="dropdown-item"  onclick="removeGalleryNode(event, 'gallery-item-3')">
                                     <!-- <span class="far fa-trash-alt text-danger fs-8"></span> -->
                                     Delete
                                   </button>
@@ -1430,9 +1434,11 @@
                         </a>
                       </div>
 
-                      <div class="col-4 p-1 position-relative">
+                      <!-- Fourth Image -->
+                      <!-- <div id="gallery-item-4" class=" col-4 p-1 position-relative"> -->
+                      <div id="gallery-item-4" class="gallery-container col-4 p-1 position-relative">
                         <a class="post1" href="#pdfDisplay" data-gallery="gallery-1" data-type="inline">
-                          <div class="file-preview">
+                          <div class="file-preview gallery-item">
                             <i class="fas fa-file-pdf fa-3x"></i>
                             <p class="file-name">dummy-file.PDF</p>
                           </div>
@@ -1447,7 +1453,7 @@
 
                               </li>
                               <li>
-                                <button class="dropdown-item"  onclick="event.stopPropagation()">
+                                <button class="dropdown-item"  onclick="removeGalleryNode(event, 'gallery-item-4')">
                                   <!-- <span class="far fa-trash-alt text-danger fs-8"></span> -->
                                   Delete
                                 </button>
@@ -1477,7 +1483,7 @@
 
                                 </li>
                                 <li>
-                                  <button class="dropdown-item"  onclick="event.stopPropagation()">
+                                  <button class="dropdown-item"  onclick="removeGalleryNode(event, 'gallery-item-4')">
                                     <!-- <span class="far fa-trash-alt text-danger fs-8"></span> -->
                                     Delete
                                   </button>
@@ -1488,9 +1494,10 @@
                         </a>
                       </div>
 
-                      <div class="col-4 p-1 position-relative">
+                      <!-- Fifth Image -->
+                      <div id="gallery-item-5" class="gallery-container d-flex col-4 p-1 position-relative">
                         <a class="post1" href="../assets/img/gallery/3.jpg" data-gallery="gallery-1">
-                          <img class="img-fluid rounded" src="../assets/img/gallery/3.jpg" alt="" />
+                          <img class="img-fluid rounded gallery-item" src="../assets/img/gallery/3.jpg" alt="" />
 
                         <!-- Desktop menu -->
                         <ul class="dropdown-menu gallery-menu gap-2 justify-content-center align-items-center">
@@ -1502,7 +1509,7 @@
 
                           </li>
                           <li>
-                            <button class="dropdown-item"  onclick="event.stopPropagation()">
+                            <button class="dropdown-item"  onclick="removeGalleryNode(event, 'gallery-item-5')">
                               <!-- <span class="far fa-trash-alt text-danger fs-8"></span> -->
                               Delete
                             </button>
@@ -1532,7 +1539,7 @@
 
                             </li>
                             <li>
-                              <button class="dropdown-item"  onclick="event.stopPropagation()">
+                              <button class="dropdown-item"  onclick="removeGalleryNode(event, 'gallery-item-5')">
                                 <!-- <span class="far fa-trash-alt text-danger fs-8"></span> -->
                                 Delete
                               </button>
@@ -1543,9 +1550,10 @@
                         </a>
                       </div>
 
-                      <div class="col-6 p-1 position-relative">
+                      <!-- Sixth Image -->
+                      <div id="gallery-item-6" class="gallery-container d-flex col-6 p-1 position-relative">
                           <a class="post1" href="../assets/video/beach.mp4" data-gallery="gallery-1" data-type="video">
-                            <div class="file-preview">
+                            <div class="file-preview gallery-item">
                               <i class="fas fa-video fa-3x"></i>
                               <p class="file-name">beach.mp4</p>
                             </div>
@@ -1560,7 +1568,7 @@
 
                               </li>
                               <li>
-                                <button class="dropdown-item"  onclick="event.stopPropagation()">
+                                <button class="dropdown-item"  onclick="removeGalleryNode(event, 'gallery-item-6')">
                                   <!-- <span class="far fa-trash-alt text-danger fs-8"></span> -->
                                   Delete
                                 </button>
@@ -1590,7 +1598,7 @@
 
                                 </li>
                                 <li>
-                                  <button class="dropdown-item"  onclick="event.stopPropagation()">
+                                  <button class="dropdown-item"  onclick="removeGalleryNode(event, 'gallery-item-6')">
                                     <!-- <span class="far fa-trash-alt text-danger fs-8"></span> -->
                                     Delete
                                   </button>
@@ -1601,9 +1609,11 @@
 
                           </a>
                       </div>
-                      <div class="col-6 p-1 position-relative">
+
+                      <!-- Seventh Image -->
+                      <div id="gallery-item-7" class="gallery-container d-flex col-6 p-1 position-relative">
                         <a class="post1" href="#pdfDisplay" data-gallery="gallery-1" data-type="inline">
-                          <div class="file-preview">
+                          <div class="file-preview gallery-item">
                             <i class="fas fa-file-pdf fa-3x"></i>
                             <p class="file-name">dummy-file.PDF</p>
                           </div>
@@ -1618,7 +1628,7 @@
 
                               </li>
                               <li>
-                                <button class="dropdown-item"  onclick="event.stopPropagation()">
+                                <button class="dropdown-item"  onclick="removeGalleryNode(event, 'gallery-item-7')">
                                   <!-- <span class="far fa-trash-alt text-danger fs-8"></span> -->
                                   Delete
                                 </button>
@@ -1648,7 +1658,7 @@
 
                                 </li>
                                 <li>
-                                  <button class="dropdown-item"  onclick="event.stopPropagation()">
+                                  <button class="dropdown-item"  onclick="removeGalleryNode(event, 'gallery-item-7')">
                                     <!-- <span class="far fa-trash-alt text-danger fs-8"></span> -->
                                     Delete
                                   </button>
@@ -3642,13 +3652,9 @@ function removeFile(index) {
       event.stopPropagation();
       event.preventDefault();
 
-      const parent = btnInstance.closest('.post1');
+      const parent = btnInstance.closest('a');
       const src = parent.href;
       copyToClipboard(src);
-
-      console.log('Copying image to clipboard:', src);
-      console.log('Image copied to clipboard:', src);
-
     }
 
     /**
@@ -3666,6 +3672,39 @@ function removeFile(index) {
         }
     }
 
+    /**
+    * Handles node deletion by direct querying the DOM
+    * @param {Event} event 
+    * @param {string} parentId - Direct ID of the parent to remove
+    */
+     function removeGalleryNode(event, parentId) {
+        event.preventDefault();
+        event.stopPropagation();
+        
+        const parentNode = document.getElementById(parentId);
+        if (!parentNode) return;
+
+            const src = parentNode.querySelector('a')?.href;
+
+            // Optional: Show feedback
+            // parentNode.style.opacity = '0';
+            // parentNode.style.width = '0';
+            // parentNode.style.transition = 'width 0.150s ease';
+
+            // Handle image deletion if needed like db call
+            if (src) {
+                // await deleteImageFromDB(imgSrc);
+                console.log('Deleting image from DB:', src);
+            }
+
+            // Remove the node
+            // setTimeout(() =>parentNode.remove() ,150);
+              parentNode.remove();
+            
+
+            // With Flexbox (flex-wrap: wrap), remaining items will automatically reflow
+            
+    }
 
 </script>
 
