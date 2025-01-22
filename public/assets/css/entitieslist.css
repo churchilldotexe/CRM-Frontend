@@ -38,6 +38,7 @@
 |   Section, Navbar
 -----------------------------------------------*/
 
+/*-------side-vertical-nav-start here------------------*/
 /* Adjust for tablet sizes (768px to 1024px) */
 section {
   padding: 2rem 0;
@@ -85,6 +86,14 @@ section {
   color: #007bff;
 }
 
+/*-------side-vertical-nav end here------------------*/
+
+/*-------main-top-nav-start here------------------*/
+
+.navbar.navbar-overrides .navbar-nav #themeSwitchDropdown::after {
+  border: none;
+}
+
 .navbar-glass,
 #navbarStandard,
 .navbar-collapse {
@@ -129,6 +138,45 @@ section {
 }
 
 /* Media Queries ----------------------------- */
+
+@media (max-width: 580px) {
+  .navbar.navbar-overrides {
+    margin: 0;
+    /* padding-left: 0; */
+    /* padding-right: 0; */
+  }
+
+  .navbar.navbar-overrides.navbar-glass-shadow {
+    /* position: fixed; */
+  }
+
+  .navbar.navbar-overrides .navbar-brand {
+    width: 0;
+  }
+
+  .navbar.navbar-overrides .navbar-brand img {
+    width: 120px;
+  }
+
+  /* .navbar.navbar-overrides:has(div#navbarStandard) { */
+  /* position: absolute; */
+  /* left: 0; */
+  /* top: 0; */
+  /* } */
+
+  .navbar.navbar-overrides .navbar-nav #themeSwitchDropdown::after {
+    border: none;
+  }
+}
+
+/* to override z-index */
+@media (max-width: 762px) {
+  .navbar.navbar-overrides dropdown-menu.dropdown-caret,
+  .navbar.navbar-overrides {
+    z-index: 1031;
+  }
+}
+
 @media (min-width: 768px) and (max-width: 1024px) {
   #list-example-desktop {
     width: 90%;
@@ -1368,7 +1416,7 @@ div.gslide-media.gslide-inline {
   .picture-placeholder:has(.uploaded-image[data-modular="270"])
     .uploaded-image {
     /* height: 90%; */
-    max-height: 100%;
+    max-height: 92%;
   }
 }
 

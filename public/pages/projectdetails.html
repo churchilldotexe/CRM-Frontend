@@ -153,7 +153,8 @@
         </div>
       </nav>
 
-      <div class="container" data-layout="container">
+      <!-- TODO: -->  
+      <div style="padding:0" class="container" data-layout="container">
         <script>
           var isFluid = JSON.parse(localStorage.getItem("isFluid"));
           if (isFluid) {
@@ -169,9 +170,10 @@
         <!--    Navbar-->
         <!-- ===============================================-->
         <div class="content">
-          <div class="row">
+          TODO:
+          <div style="margin:0" class="row">
             <nav
-              class="navbar navbar-light navbar-glass navbar-top navbar-expand-lg"
+              class="navbar navbar-light navbar-glass navbar-top navbar-expand-lg navbar-overrides"
             >
               <button
                 class="btn navbar-toggler-humburger-icon navbar-toggler me-1 me-sm-3"
@@ -196,6 +198,8 @@
                   /><span class="font-sans-serif text-primary"></span>
                 </div>
               </a>
+
+
               <div
                 class="collapse navbar-collapse scrollbar"
                 id="navbarStandard"
@@ -438,6 +442,7 @@
                   </li>
                 </ul>
               </div>
+
               <ul
                 class="navbar-nav navbar-nav-icons ms-auto flex-row align-items-center"
               >
@@ -1189,9 +1194,11 @@
                   </div>
                 </li>
               </ul>
+
+
             </nav>
             <!-- For mobile, display the list horizontally -->
-            <div class="col-3 d-block d-md-none d-lg-none">
+            <div class="foobar col-3 d-block d-md-none d-lg-none">
               <div
                 id="list-example-mobile"
                 class="list-group d-flex flex-row align-items-center justify-content-center fixed-top"
@@ -3320,15 +3327,23 @@
                         id="gallery-item-7"
                         class="gallery-container d-flex col-6 p-1 position-relative"
                       >
+
+                        <!-- <a -->
+                        <!--   class="post1" -->
+                        <!--   href="#pdfDisplay" -->
+                        <!--   data-gallery="gallery-1" -->
+                        <!--   data-type="inline" -->
+                        <!-- > -->
                         <a
                           class="post1"
-                          href="#pdfDisplay"
+                          href="#textDisplay"
                           data-gallery="gallery-1"
                           data-type="inline"
                         >
                           <div class="file-preview gallery-item">
-                            <i class="fas fa-file-pdf fa-3x"></i>
-                            <p class="file-name">dummy-file.PDF</p>
+                            <i class="far fa-file-alt fa-3x"></i>
+
+                            <p class="file-name">sample.txt</p>
                           </div>
 
                           <!-- Desktop menu -->
@@ -3398,6 +3413,7 @@
                         </a>
                       </div>
 
+                      <!-- TODO: fallback should trigger a new tab  -->
                       <!-- Div to display PDF -->
                       <div id="pdfDisplay" style="margin: 10px; display: none">
                         <object
@@ -3417,6 +3433,27 @@
                           </p>
                         </object>
                       </div>
+
+
+                      <!-- Div to display text file -->
+                    <div id="textDisplay" style="margin: 10px; display:none">
+                      <object
+                        data="../assets/docs/sample.txt"
+                        type="text/plain"
+                        width="100%"
+                        height="100%"
+                        style="border: none"
+                        aria-labelledby="Text Preview"
+                        title="Text Preview"
+                      >
+                        <p>
+                          Your browser does not support viewing text files.
+                          <a href="../assets/docs/sample.txt">Download the text file</a>
+                        </p>
+                      </object>
+                    </div>
+
+
                     </div>
 
                     <!-- **** Image Gallery Implementation **** -->
@@ -4948,8 +4985,11 @@
         if (input.files && input.files[0]) {
           const file = input.files[0];
           const reader = new FileReader();
+          let imgUrl =;
 
           reader.onload = function (e) {
+            // get the imgUrl
+            imgUrl = e.target.result;
             const pictureSection = document.getElementById(pictureSectionId);
 
             // Remove placeholder content
@@ -4989,6 +5029,7 @@
             pictureSection.appendChild(img);
             pictureSection.appendChild(removeButton);
             pictureSection.appendChild(rotateButton);
+
           };
 
           reader.readAsDataURL(file);
