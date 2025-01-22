@@ -735,10 +735,10 @@ section {
   display: none !important;
 }
 
-.picture-container{
-    width: 100%;
-    margin-left: auto;
-    margin-right: auto;
+.picture-container {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .picture-placeholder {
@@ -748,7 +748,7 @@ section {
   align-items: center;
   flex: auto; /* Equal space for both placeholders */
   max-width: 100%; /* Limit the size to prevent overflow */
-  max-height: 250px;
+  max-height: 350px;
   width: 100%;
   height: 100%;
   aspect-ratio: 1/1;
@@ -770,7 +770,13 @@ section {
   overflow: hidden;
   transition:
     border-color 0.1s ease,
-    background-color 0.1s ease;
+    background-color 0.1s ease,
+    max-height 0.1s ease;
+}
+
+.picture-placeholder:has(.uploaded-image[data-modular="90"]) .uploaded-image,
+.picture-placeholder:has(.uploaded-image[data-modular="270"]) .uploaded-image {
+  max-width: 350px;
 }
 
 .picture-placeholder i {
@@ -786,7 +792,9 @@ section {
   background-color: inherit; /* git the background from parents instead for dark/light mode */
   border-radius: 4px;
   transform-origin: center;
-  transition: transform 0.2s ease;
+  transition:
+    transform 0.2s ease,
+    max-width 0.2s ease;
 }
 
 /* Add hover effect for better user experience */
@@ -829,6 +837,11 @@ section {
   justify-content: center;
   align-items: center;
   padding: 0;
+}
+
+.rotate-picture:hover,
+.remove-picture:hover {
+  background-color: rgba(0, 0, 0, 0.25);
 }
 
 /* File */
@@ -1302,6 +1315,23 @@ div.gslide-media.gslide-inline {
 
 /* Media Queries ----------------------------- */
 @media (max-width: 768px) {
+  [data-bs-theme="light"] .picture-placeholder:has(img),
+  [data-bs-theme="light"] .file-placeholder {
+    border-style: solid;
+    border-width: 1px;
+    /* border-color: #3c465280; */
+  }
+
+  [data-bs-theme="light"] .picture-placeholder {
+    border-color: transparent;
+  }
+
+  [data-bs-theme="dark"] .picture-placeholder,
+  [data-bs-theme="dark"] .file-placeholder {
+    border-style: solid;
+    border-width: 1px;
+  }
+
   .chart-container {
     width: 50%;
     margin: 10px 0;
@@ -1323,9 +1353,22 @@ div.gslide-media.gslide-inline {
   }
 
   .picture-placeholder > .browse-btn {
-      margin: 0;
+    margin: 0;
     display: block;
     width: 100%;
+    background-color: var(--falcon-blue);
+    color: #fff;
+  }
+
+  .picture-placeholder:has(img) {
+    min-height: 350px;
+  }
+
+  .picture-placeholder:has(.uploaded-image[data-modular="90"]) .uploaded-image,
+  .picture-placeholder:has(.uploaded-image[data-modular="270"])
+    .uploaded-image {
+    /* height: 90%; */
+    max-height: 100%;
   }
 }
 

@@ -5041,15 +5041,26 @@
         fileInput.dispatchEvent(new Event("change"));
       }
 
+
       function rotateImage(img) {
         const currentRotation = img.dataset.rotation
           ? parseInt(img.dataset.rotation)
           : 0;
+
+        // Set will-change before rotation
+        img.style.willChange = 'transform, max-width';
+
         const newRotation = currentRotation + 90;
-        const modularRotation = newRotation % 90;
+        const modularRotation = newRotation % 360;
 
         img.style.transform = `rotate(${newRotation}deg)`;
-        img.dataset.rotation = modularRotation;
+        img.dataset.rotation = newRotation;
+        img.dataset.modular = modularRotation;
+
+        // Remove will-change after transition completes
+        img.addEventListener('transitionend', () => {
+          img.style.willChange = 'auto';
+        }, { once: true }); // Use once: true to auto cleanup for better memory management
       }
 
       function removePicture(pictureSection, inputId) {
