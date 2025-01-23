@@ -4321,9 +4321,197 @@
                });
 
             // Options: you can change here the url to the URL from database
+
             appendToGalleryNode(imgSrc);
          }
+
+           
       </script>
+
+<!-- Gallery Preview Implementation -->
+
+      <!-- use to display the image in the gallery -->
+      <template id="gallery-item-template">
+         <div class="gallery-container d-flex p-1 position-relative">
+            <a class="post1" href="#" data-gallery="gallery-1">
+               <img class="img-fluid rounded gallery-item" src="" alt="" />
+
+               <!-- Desktop menu -->
+               <ul class="dropdown-menu gallery-menu gap-2 justify-content-center align-items-center">
+                  <li>
+                     <button class="dropdown-item" onclick="copyImageToClipboard(this)">Copy</button>
+                  </li>
+                  <li>
+                     <button class="dropdown-item" onclick="removeGalleryNode(event, 'UNIQUE_ID')">Delete</button>
+                  </li>
+               </ul>
+
+               <!-- Mobile 3-dot button -->
+               <div class="dropdown d-lg-none position-absolute top-0 end-0">
+                  <button
+                     class="btn btn-link dropdown-toggle hide-dropdown-caret"
+                     type="button"
+                     data-bs-toggle="dropdown"
+                     aria-expanded="false"
+                     onclick="event.stopPropagation()"
+                  >
+                     <i class="fas fa-ellipsis-v"></i>
+                  </button>
+                  <ul class="dropdown-menu dropdown-menu-end gallery-dropdown-menu">
+                     <li>
+                        <button class="dropdown-item" onclick="copyImageToClipboard(this)">Copy</button>
+                     </li>
+                     <li>
+                        <button class="dropdown-item" onclick="removeGalleryNode(event, 'UNIQUE_ID')">Delete</button>
+                     </li>
+                  </ul>
+               </div>
+            </a>
+         </div>
+      </template>
+
+      <script>
+
+
+         /**
+          * Copies the image source to the clipboard.
+          *
+          * @param {HTMLElement} btnInstance - The button element that triggered the copy
+          */
+         function copyImageToClipboard(btnInstance) {
+            // make sure the button doesnt propagate and prevent default
+            event.stopPropagation();
+            event.preventDefault();
+
+            const parent = btnInstance.closest('a');
+            const src = parent.href;
+            copyToClipboard(src);
+         }
+
+         /**
+          * Copy URL to clipboard
+          * @param {string} url - URL to copy
+          * @param {HTMLElement} button - Button element that triggered copy
+          */
+         async function copyToClipboard(url) {
+            try {
+               await navigator.clipboard.writeText(url);
+               // showTooltip(button, 'Copied!');
+            } catch (err) {
+               showTooltip(button, 'Failed to copy');
+               // console.error('Failed to copy:', err);
+            }
+         }
+
+
+         /**
+          * Handles node deletion by direct querying the DOM
+          * @param {Event} event
+          * @param {string} parentId - Direct ID of the parent to remove
+          */
+         function removeGalleryNode(event, parentId) {
+            event.preventDefault();
+            event.stopPropagation();
+
+            const parentNode = document.getElementById(parentId);
+            if (!parentNode) return;
+
+            const src = parentNode.querySelector('a')?.href;
+
+            // Handle image deletion if needed like db call
+            if (src) {
+               // await deleteImageFromDB(imgSrc);
+               console.log('Deleting image from DB:', src);
+            }
+
+            // Remove the node
+            // setTimeout(() =>parentNode.remove() ,150);
+            parentNode.remove();
+
+            // With Flexbox (flex-wrap: wrap), remaining items will automatically reflow
+
+         }
+
+
+         /**
+          * Appends a new gallery item to the parent
+          * @param {string | ArrayBuffer | null} imgSrc - The image source, which can be a data URL (string), an ArrayBuffer, or null. This is typically generated using `FileReader`.
+          * @param {string | null} imgId - An optional imgId to use for the image. If not provided, a unique ID will be generated.
+          */
+         async function appendToGalleryNode(imgSrc, imgId = null) {
+            const template = document.getElementById('gallery-item-template');
+            const clonedTemplate = template.content.cloneNode(true);
+
+            // Create elements
+            const container = clonedTemplate.querySelector('.gallery-container');
+            const img = clonedTemplate.querySelector('img');
+            const uniqueId = `gallery-item-${Date.now()}`;
+            container.id = imgId ?? uniqueId;
+
+            // Helper function to load image and get dimensions
+            const loadImage = (url) => {
+               return new Promise((resolve, reject) => {
+                  const imgObject = new Image();
+                  imgObject.src = url;
+                  imgObject.onload = () => resolve(imgObject);
+                  imgObject.onerror = (err) => reject(err);
+               });
+            };
+
+            try {
+               // Wait for the image to load
+               const imgObject = await loadImage(imgSrc);
+
+               // Calculate ratio and determine column class
+               const ratio = imgObject.naturalWidth / imgObject.naturalHeight;
+               const colClass = ratio > 1 ? 'col-6' : 'col-4';
+               container.classList.add(colClass); // ✅ Correct class applied
+
+               // Set up image and buttons
+               img.src = imgSrc;
+               clonedTemplate.querySelector('a').href = imgSrc;
+
+               // Update delete buttons
+               const deleteButtons = clonedTemplate.querySelectorAll("[onclick*='removeGalleryNode']");
+               deleteButtons.forEach((btn) => {
+                  btn.setAttribute('onclick', `removeGalleryNode(event, '${uniqueId}')`);
+               });
+
+               // Append to DOM AFTER dimensions are processed
+               document.getElementById('gallery-container').appendChild(clonedTemplate);
+            } catch (error) {
+               console.error('Failed to load image:', error);
+            }
+         }
+
+
+
+
+         /**
+          * Handles PDF loading errors by opening the PDF file in a new tab
+          *
+          *@param {HTMLObjectElement} objectElement - The object element that failed to load
+          *@description This function is triggered when a PDF fails to load in the browser.
+          *              It automatically opens the PDF file specified in the data attribute
+          *              in a new browser tab, providing a seamless fallback mechanism.
+          */
+         function handlePDFError(objectElement) {
+
+            const pdfPath = objectElement.getAttribute('data');
+
+            // Open the PDF in a new tab if a path is found
+            if (pdfPath) {
+
+               window.open(pdfPath, '_blank');
+            } else {
+               console.error('No PDF path found in the data attribute');
+            }
+            }
+
+      </script>
+
+
+
 
       <!-- 4 charts -->
 
@@ -5119,191 +5307,8 @@
          }
       </script>
 
-      <!-- Gallery Preview Implementation -->
+      
 
-      <!-- use to display the image in the gallery -->
-      <template id="gallery-item-template">
-         <div class="gallery-container d-flex p-1 position-relative">
-            <a class="post1" href="#" data-gallery="gallery-1">
-               <img class="img-fluid rounded gallery-item" src="" alt="" />
-
-               <!-- Desktop menu -->
-               <ul class="dropdown-menu gallery-menu gap-2 justify-content-center align-items-center">
-                  <li>
-                     <button class="dropdown-item" onclick="copyImageToClipboard(this)">Copy</button>
-                  </li>
-                  <li>
-                     <button class="dropdown-item" onclick="removeGalleryNode(event, 'UNIQUE_ID')">Delete</button>
-                  </li>
-               </ul>
-
-               <!-- Mobile 3-dot button -->
-               <div class="dropdown d-lg-none position-absolute top-0 end-0">
-                  <button
-                     class="btn btn-link dropdown-toggle hide-dropdown-caret"
-                     type="button"
-                     data-bs-toggle="dropdown"
-                     aria-expanded="false"
-                     onclick="event.stopPropagation()"
-                  >
-                     <i class="fas fa-ellipsis-v"></i>
-                  </button>
-                  <ul class="dropdown-menu dropdown-menu-end gallery-dropdown-menu">
-                     <li>
-                        <button class="dropdown-item" onclick="copyImageToClipboard(this)">Copy</button>
-                     </li>
-                     <li>
-                        <button class="dropdown-item" onclick="removeGalleryNode(event, 'UNIQUE_ID')">Delete</button>
-                     </li>
-                  </ul>
-               </div>
-            </a>
-         </div>
-      </template>
-
-      <script>
-         /**
-          * Copies the image source to the clipboard.
-          *
-          * @param {HTMLElement} btnInstance - The button element that triggered the copy
-          */
-         function copyImageToClipboard(btnInstance) {
-            // make sure the button doesnt propagate and prevent default
-            event.stopPropagation();
-            event.preventDefault();
-
-            const parent = btnInstance.closest('a');
-            const src = parent.href;
-            copyToClipboard(src);
-         }
-
-         /**
-          * Copy URL to clipboard
-          * @param {string} url - URL to copy
-          * @param {HTMLElement} button - Button element that triggered copy
-          */
-         async function copyToClipboard(url) {
-            try {
-               await navigator.clipboard.writeText(url);
-               // showTooltip(button, 'Copied!');
-            } catch (err) {
-               showTooltip(button, 'Failed to copy');
-               // console.error('Failed to copy:', err);
-            }
-         }
-
-         /**
-          * Handles node deletion by direct querying the DOM
-          * @param {Event} event
-          * @param {string} parentId - Direct ID of the parent to remove
-          */
-         function removeGalleryNode(event, parentId) {
-            event.preventDefault();
-            event.stopPropagation();
-
-            const parentNode = document.getElementById(parentId);
-            if (!parentNode) return;
-
-            const src = parentNode.querySelector('a')?.href;
-
-            // Optional: Show feedback
-            // parentNode.style.opacity = '0';
-            // parentNode.style.width = '0';
-            // parentNode.style.transition = 'width 0.150s ease';
-
-            // Handle image deletion if needed like db call
-            if (src) {
-               // await deleteImageFromDB(imgSrc);
-               console.log('Deleting image from DB:', src);
-            }
-
-            // Remove the node
-            // setTimeout(() =>parentNode.remove() ,150);
-            parentNode.remove();
-
-            // With Flexbox (flex-wrap: wrap), remaining items will automatically reflow
-         }
-
-         /**
-          * Appends a new gallery item to the parent
-          * @param {string | ArrayBuffer | null} imgSrc - The image source, which can be a data URL (string), an ArrayBuffer, or null. This is typically generated using `FileReader`.
-          * @param {string | null} imgId - An optional imgId to use for the image. If not provided, a unique ID will be generated.
-          */
-         async function appendToGalleryNode(imgSrc, imgId = null) {
-            const template = document.getElementById('gallery-item-template');
-            const clonedTemplate = template.content.cloneNode(true);
-
-            // Create elements
-            const container = clonedTemplate.querySelector('.gallery-container');
-            const img = clonedTemplate.querySelector('img');
-            const uniqueId = `gallery-item-${Date.now()}`;
-            container.id = imgId ?? uniqueId;
-
-            // Helper function to load image and get dimensions
-            const loadImage = (url) => {
-               return new Promise((resolve, reject) => {
-                  const imgObject = new Image();
-                  imgObject.src = url;
-                  imgObject.onload = () => resolve(imgObject);
-                  imgObject.onerror = (err) => reject(err);
-               });
-            };
-
-            try {
-               // Wait for the image to load
-               const imgObject = await loadImage(imgSrc);
-
-               // Calculate ratio and determine column class
-               const ratio = imgObject.naturalWidth / imgObject.naturalHeight;
-               const colClass = ratio > 1 ? 'col-6' : 'col-4';
-               container.classList.add(colClass); // ✅ Correct class applied
-
-               // Set up image and buttons
-               img.src = imgSrc;
-               clonedTemplate.querySelector('a').href = imgSrc;
-
-               // Update delete buttons
-               const deleteButtons = clonedTemplate.querySelectorAll("[onclick*='removeGalleryNode']");
-               deleteButtons.forEach((btn) => {
-                  btn.setAttribute('onclick', `removeGalleryNode(event, '${uniqueId}')`);
-               });
-
-               // Append to DOM AFTER dimensions are processed
-               document.getElementById('gallery-container').appendChild(clonedTemplate);
-            } catch (error) {
-               console.error('Failed to load image:', error);
-            }
-         }
-
-         /**
-          * Handles PDF loading errors by opening the PDF file in a new tab
-          *
-          * @param {HTMLObjectElement} objectElement - The object element that failed to load
-          * @description This function is triggered when a PDF fails to load in the browser.
-          *              It automatically opens the PDF file specified in the data attribute
-          *              in a new browser tab, providing a seamless fallback mechanism.
-          * @example
-          * // Used as an event handler on an <object> element
-          * <object
-          *   data="path/to/file.pdf"
-          *   onerror="handlePDFError(this)"
-          * >
-          *   Fallback content
-          * </object>
-          */
-         function handlePDFError(objectElement) {
-            // Use the data attribute from the object element to get the PDF path
-            const pdfPath = objectElement.getAttribute('data');
-
-            // Open the PDF in a new tab if a path is found
-            if (pdfPath) {
-            if (pdfPath) {
-               window.open(pdfPath, '_blank');
-            } else {
-               console.error('No PDF path found in the data attribute');
-            }
-         }
-      </script>
 
       <!-- Load jQuery (if needed) and Flatpickr JS from CDN -->
       <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
