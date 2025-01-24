@@ -585,43 +585,44 @@ section {
 }
 
 /* Media Queries ----------------------------- */
-@media (min-width: 768px) {
-  #mobile-stack .accordion-container.triggered .accordion-trigger .accor-open {
+@media (min-width: 801px) {
+  .mobile-stack .accordion-container.triggered .accordion-trigger .accor-open {
     display: none;
   }
 
-  #mobile-stack .accordion-container .accordion-trigger {
+  /* to bypass the styling to affect it to child  */
+  .mobile-stack .accordion-container .accordion-trigger {
     display: contents;
     color: inherit;
   }
 
-  #mobile-stack .accordion-container .accordion-trigger .accor-open {
+  .mobile-stack .accordion-container .accordion-trigger .accor-open {
     display: none;
   }
 }
 
 @media (max-width: 800px) {
   /* Force table to not be like tables anymore */
-  #mobile-stack table,
-  #mobile-stack thead,
-  #mobile-stack tbody,
-  #mobile-stack th,
-  #mobile-stack td,
-  #mobile-stack tr {
+  .mobile-stack table,
+  .mobile-stack thead,
+  .mobile-stack tbody,
+  .mobile-stack th,
+  .mobile-stack td,
+  .mobile-stack tr {
     display: block;
   }
 
-  #mobile-stack thead tr {
+  .mobile-stack thead tr {
     display: none;
   }
 
-  #mobile-stack tr {
+  .mobile-stack tr {
     border: 1px solid #ccc;
     border-radius: 4px;
     margin-bottom: 1rem;
   }
 
-  #mobile-stack td {
+  .mobile-stack td {
     /* Behave  like a "row" */
     border: none;
     /* border-bottom: 1px solid #eee;  */
@@ -631,7 +632,7 @@ section {
     text-align: left !important;
   }
 
-  #mobile-stack td:before {
+  .mobile-stack td:before {
     position: absolute;
     top: 6px;
     left: 6px;
@@ -643,7 +644,7 @@ section {
   }
 
   /* Label the data */
-  /* #mobile-stack td:before { content: attr(data-title); } */
+  /* .mobile-stack td:before { content: attr(data-title); } */
 
   .table th,
   .table td {
@@ -656,45 +657,45 @@ section {
     width: 80% !important;
   }
 
-  #mobile-stack .accordion-container {
-    transition: min-height 0.3s ease-out, max-height 0.3s ease-out;
+  .mobile-stack .accordion-container {
+    transition: min-height 0.15s ease-out, max-height 0.15s ease-out;
   }
 
-  #mobile-stack .accordion-container.triggered {
+  .mobile-stack .accordion-container.triggered {
     min-height: 44px;
     max-height: 44px;
     overflow: hidden;
   }
 
-  #mobile-stack .accordion-container.triggered > *:not(:first-child) {
+  .mobile-stack .accordion-container.triggered > *:not(:first-child) {
     /* display: none; */
     visibility: hidden;
     opacity: 0;
     transition-behavior: allow-discrete;
-    transition: opacity 0.3s ease-out, visibility 0.3s ease-out;
+    transition: opacity 0.15s ease-out, visibility 0.15s ease-out;
   }
 
   /* icon */
-  #mobile-stack .accordion-container.triggered .accordion-trigger .accor-open {
+  .mobile-stack .accordion-container.triggered .accordion-trigger .accor-open {
     transform: rotate(180deg);
     transition: rotate 0.3s ease-out;
   }
 
-  #mobile-stack .accordion-container > *:not(:first-child) {
+  .mobile-stack .accordion-container > *:not(:first-child) {
     transition: transform 0.15s ease-out, opacity 0.15s ease-out;
   }
 
-  #mobile-stack .accordion-container.triggering > *:not(:first-child) {
-    transform: translateY(-100%);
+  .mobile-stack .accordion-container.triggering > *:not(:first-child) {
+    transform: translateY(-10px);
     opacity: 0;
   }
 
-  #mobile-stack .accordion-container.untriggering > *:not(:first-child) {
+  .mobile-stack .accordion-container.untriggering > *:not(:first-child) {
     transform: translateY(0);
     opacity: 0.5;
   }
 
-  #mobile-stack .accordion-container .accordion-trigger {
+  .mobile-stack .accordion-container .accordion-trigger {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -1318,6 +1319,28 @@ section {
 canvas {
   width: 100%; /* Full width of the container */
   height: auto; /* Maintain aspect ratio */
+}
+
+/* Media Queries ----------------------------- */
+@media (max-width: 800px) {
+  #table-purchase-body .task-mobile-bg {
+    background-color: var(--falcon-gray-100);
+  }
+
+  #table-purchase-body .task-mobile-bg.triggered {
+    min-height: 30px;
+    max-height: 30px;
+  }
+
+  #table-purchase-body .task-mobile-bg th {
+    padding: 4px;
+    color: rgba(var(--falcon-link-color-rgb), var(--falcon-link-opacity, 1));
+  }
+  #table-purchase-body .task-mobile-bg .accordion-trigger {
+    font-weight: 600;
+    align-items: center;
+    justify-content: center;
+  }
 }
 
 /*-----------------------------------------------
