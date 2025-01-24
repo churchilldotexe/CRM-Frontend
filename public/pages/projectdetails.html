@@ -1189,16 +1189,21 @@
                         </tr>
                       </thead>
                       <tbody class="">
+                        <!-- set data-important to the `td` to decide which to show on mobile accordion header
+                          maximum of 3. too long text will be cut and ellipsis
+                          if the `td` has another html element inside you can use data-important to decide
+                          what to show in the accordion header
+                          e.g.  data-important="John Doe" -->
                         <tr class="accordion-container triggered">
-                          <td class="orderNumber" data-title="Name">
+                          <td class="orderNumber" data-important="" data-title="Name">
                             <button class="w-100 accordion-trigger" type="button" onclick="triggerHide(event)">
                               John Doe
                               <span class="fa fa-chevron-up fs-8 accor-open"></span>
                             </button>
                           </td>
-                          <td class="orderDate" data-title="Role">Project Manager</td>
+                          <td class="orderDate" data-important="" data-title="Role">Project Manager</td>
                           <td class="projectId" data-title="Email">john.doe@example.com</td>
-                          <td class="itemsSold" data-title="Phone">(123) 456-7890</td>
+                          <td class="itemsSold" data-important="" data-title="Phone">(123) 456-7890</td>
                           <td class="quantity" data-title="Updates">
                             <div class="form-group">
                               <select
@@ -1238,15 +1243,15 @@
                         </tr>
 
                         <tr class="accordion-container triggered">
-                          <td class="orderNumber" data-title="Name">
+                          <td class="orderNumber" data-important="" data-title="Name">
                             <button class="w-100 accordion-trigger" type="button" onclick="triggerHide(event)">
                               John Doe
                               <span class="fa fa-chevron-up fs-8 accor-open"></span>
                             </button>
                           </td>
-                          <td class="orderDate" data-title="Role">Project Manager</td>
+                          <td class="orderDate" data-important="" data-title="Role">Project Manager</td>
                           <td class="projectId" data-title="Email">john.doe@example.com</td>
-                          <td class="itemsSold" data-title="Phone">(123) 456-7890</td>
+                          <td class="itemsSold" data-important="" data-title="Phone">(123) 456-7890</td>
                           <td class="quantity" data-title="Updates">
                             <div class="form-group">
                               <select
@@ -1284,15 +1289,15 @@
                         </tr>
 
                         <tr class="accordion-container triggered">
-                          <td class="orderNumber" data-title="Name">
+                          <td class="orderNumber" data-important="" data-title="Name">
                             <button class="w-100 accordion-trigger" type="button" onclick="triggerHide(event)">
                               John Doe
                               <span class="fa fa-chevron-up fs-8 accor-open"></span>
                             </button>
                           </td>
-                          <td class="orderDate" data-title="Role">Project Manager</td>
+                          <td class="orderDate" data-important="" data-title="Role">Project Manager</td>
                           <td class="projectId" data-title="Email">john.doe@example.com</td>
-                          <td class="itemsSold" data-title="Phone">(123) 456-7890</td>
+                          <td class="itemsSold" data-important="" data-title="Phone">(123) 456-7890</td>
                           <td class="quantity" data-title="Updates">
                             <div class="form-group">
                               <select
@@ -1330,15 +1335,15 @@
                         </tr>
 
                         <tr class="accordion-container triggered">
-                          <td class="orderNumber" data-title="Name">
+                          <td class="orderNumber" data-important="" data-title="Name">
                             <button class="w-100 accordion-trigger" type="button" onclick="triggerHide(event)">
                               John Doe
                               <span class="fa fa-chevron-up fs-8 accor-open"></span>
                             </button>
                           </td>
-                          <td class="orderDate" data-title="Role">Project Manager</td>
+                          <td class="orderDate" data-important="" data-title="Role">Project Manager</td>
                           <td class="projectId" data-title="Email">john.doe@example.com</td>
-                          <td class="itemsSold" data-title="Phone">(123) 456-7890</td>
+                          <td class="itemsSold" data-important="" data-title="Phone">(123) 456-7890</td>
                           <td class="quantity" data-title="Updates">
                             <div class="form-group">
                               <select
@@ -1375,15 +1380,15 @@
                           </td>
                         </tr>
                         <tr class="accordion-container triggered">
-                          <td class="orderNumber" data-title="Name">
+                          <td class="orderNumber" data-important="" data-title="Name">
                             <button class="w-100 accordion-trigger" type="button" onclick="triggerHide(event)">
                               John Doe
                               <span class="fa fa-chevron-up fs-8 accor-open"></span>
                             </button>
                           </td>
-                          <td class="orderDate" data-title="Role">Project Manager</td>
+                          <td class="orderDate" data-important="" data-title="Role">Project Manager</td>
                           <td class="projectId" data-title="Email">john.doe@example.com</td>
-                          <td class="itemsSold" data-title="Phone">(123) 456-7890</td>
+                          <td class="itemsSold" data-important="" data-title="Phone">(123) 456-7890</td>
                           <td class="quantity" data-title="Updates">
                             <div class="form-group">
                               <select
@@ -2635,8 +2640,13 @@
                             </tr>
                           </thead>
                           <tbody class="list">
+                            <!-- set data-important to the `td` to decide which to show on mobile accordion header
+                             maximum of 3. too long text will be cut and ellipsis
+                             if the `td` has another html element inside you can use data-important to decide
+                               what to show in the accordion header
+                               e.g.  data-important="John Doe" -->
                             <tr class="accordion-container triggered">
-                              <td class="orderNumber">
+                              <td class="orderNumber" data-important="">
                                 <button class="w-100 accordion-trigger" type="button" onclick="triggerHide(event)">
                                   SO12345
                                   <span class="fa fa-chevron-up fs-8 accor-open"></span>
@@ -2644,17 +2654,17 @@
                               </td>
                               <td class="orderDate">2024-11-10</td>
                               <td class="projectId">ProjectA</td>
-                              <td class="itemsSold">Glass Panel</td>
+                              <td class="itemsSold" data-important="">Glass Panel</td>
                               <td class="quantity">10</td>
                               <td class="unitPrice">$50</td>
                               <td class="taxable">$500</td>
                               <td class="nonTaxable">$0</td>
                               <td class="taxRate">10%</td>
                               <td class="taxAmount">$50</td>
-                              <td class="totalAmount">$550</td>
+                              <td class="totalAmount" data-important="">$550</td>
                             </tr>
                             <tr class="accordion-container triggered">
-                              <td class="orderNumber">
+                              <td class="orderNumber" data-important="">
                                 <button class="w-100 accordion-trigger" type="button" onclick="triggerHide(event)">
                                   SO12345
                                   <span class="fa fa-chevron-up fs-8 accor-open"></span>
@@ -2662,17 +2672,17 @@
                               </td>
                               <td class="orderDate">2024-11-10</td>
                               <td class="projectId">ProjectA</td>
-                              <td class="itemsSold">Glass Panel</td>
+                              <td class="itemsSold" data-important="">Glass Panel</td>
                               <td class="quantity">10</td>
                               <td class="unitPrice">$50</td>
                               <td class="taxable">$500</td>
                               <td class="nonTaxable">$0</td>
                               <td class="taxRate">10%</td>
                               <td class="taxAmount">$50</td>
-                              <td class="totalAmount">$550</td>
+                              <td class="totalAmount" data-important="">$550</td>
                             </tr>
                             <tr class="accordion-container triggered">
-                              <td class="orderNumber">
+                              <td class="orderNumber" data-important="">
                                 <button class="w-100 accordion-trigger" type="button" onclick="triggerHide(event)">
                                   SO12345
                                   <span class="fa fa-chevron-up fs-8 accor-open"></span>
@@ -2680,17 +2690,17 @@
                               </td>
                               <td class="orderDate">2024-11-10</td>
                               <td class="projectId">ProjectA</td>
-                              <td class="itemsSold">Glass Panel</td>
+                              <td class="itemsSold" data-important="">Glass Panel</td>
                               <td class="quantity">10</td>
                               <td class="unitPrice">$50</td>
                               <td class="taxable">$500</td>
                               <td class="nonTaxable">$0</td>
                               <td class="taxRate">10%</td>
                               <td class="taxAmount">$50</td>
-                              <td class="totalAmount">$550</td>
+                              <td class="totalAmount" data-important="">$550</td>
                             </tr>
                             <tr class="accordion-container triggered">
-                              <td class="orderNumber">
+                              <td class="orderNumber" data-important="">
                                 <button class="w-100 accordion-trigger" type="button" onclick="triggerHide(event)">
                                   SO12345
                                   <span class="fa fa-chevron-up fs-8 accor-open"></span>
@@ -2698,14 +2708,14 @@
                               </td>
                               <td class="orderDate">2024-11-10</td>
                               <td class="projectId">ProjectA</td>
-                              <td class="itemsSold">Glass Panel</td>
+                              <td class="itemsSold" data-important="">Glass Panel</td>
                               <td class="quantity">10</td>
                               <td class="unitPrice">$50</td>
                               <td class="taxable">$500</td>
                               <td class="nonTaxable">$0</td>
                               <td class="taxRate">10%</td>
                               <td class="taxAmount">$50</td>
-                              <td class="totalAmount">$550</td>
+                              <td class="totalAmount" data-important="">$550</td>
                             </tr>
                           </tbody>
                         </table>
@@ -2717,11 +2727,6 @@
                         </div>
                       </div>
                     </div>
-
-                    <!-- <tr class="accordion-container triggered">
-                              <td class="orderNumber">
-
-                                -->
 
                     <h5>Payment Schedule</h5>
                     <div
@@ -2742,65 +2747,70 @@
                             </tr>
                           </thead>
                           <tbody class="list">
+                            <!-- set data-important to the `td` to decide which to show on mobile accordion header
+                             maximum of 3. too long text will be cut and ellipsis
+                             if the `td` has another html element inside you can use data-important to decide
+                               what to show in the accordion header
+                               e.g.  data-important="John Doe" -->
                             <tr class="accordion-container triggered">
-                              <td class="milestone">
+                              <td class="milestone" data-important="">
                                 <button class="w-100 accordion-trigger" type="button" onclick="triggerHide(event)">
                                   Project Start
                                   <span class="fa fa-chevron-up fs-8 accor-open"></span>
                                 </button>
                               </td>
-                              <td class="amount">$1000</td>
+                              <td class="amount" data-important="">$1000</td>
                               <td class="term">Net 15</td>
                               <td class="method">Bank Transfer</td>
-                              <td class="status">Pending</td>
+                              <td class="status" data-important="">Pending</td>
                               <td class="invoice">INV002</td>
                               <td class="action">
                                 <button class="btn btn-falcon-default btn-sm me-1 mb-1">Generate Invoice</button>
                               </td>
                             </tr>
                             <tr class="accordion-container triggered">
-                              <td class="milestone">
+                              <td class="milestone" data-important="">
                                 <button class="w-100 accordion-trigger" type="button" onclick="triggerHide(event)">
                                   Project Start
                                   <span class="fa fa-chevron-up fs-8 accor-open"></span>
                                 </button>
                               </td>
-                              <td class="amount">$1000</td>
+                              <td class="amount" data-important="">$1000</td>
                               <td class="term">Net 15</td>
                               <td class="method">Bank Transfer</td>
-                              <td class="status">Pending</td>
+                              <td class="status" data-important="">Pending</td>
                               <td class="invoice">INV002</td>
                               <td class="action">
                                 <button class="btn btn-falcon-default btn-sm me-1 mb-1">Generate Invoice</button>
                               </td>
                             </tr>
                             <tr class="accordion-container triggered">
-                              <td class="milestone">
+                              <td class="milestone" data-important="">
                                 <button class="w-100 accordion-trigger" type="button" onclick="triggerHide(event)">
                                   Project Start
                                   <span class="fa fa-chevron-up fs-8 accor-open"></span>
                                 </button>
                               </td>
-                              <td class="amount">$1000</td>
+                              <td class="amount" data-important="">$1000</td>
                               <td class="term">Net 15</td>
                               <td class="method">Bank Transfer</td>
-                              <td class="status">Pending</td>
+                              <td class="status" data-important="">Pending</td>
                               <td class="invoice">INV002</td>
                               <td class="action">
                                 <button class="btn btn-falcon-default btn-sm me-1 mb-1">Generate Invoice</button>
                               </td>
                             </tr>
                             <tr class="accordion-container triggered">
-                              <td class="milestone">
+                              <td class="milestone" data-important="">
                                 <button class="w-100 accordion-trigger" type="button" onclick="triggerHide(event)">
                                   Project Start
                                   <span class="fa fa-chevron-up fs-8 accor-open"></span>
                                 </button>
                               </td>
-                              <td class="amount">$1000</td>
+                              <td class="amount" data-important="">$1000</td>
                               <td class="term">Net 15</td>
                               <td class="method">Bank Transfer</td>
-                              <td class="status">Pending</td>
+                              <td class="status" data-important="">Pending</td>
                               <td class="invoice">INV002</td>
                               <td class="action">
                                 <button class="btn btn-falcon-default btn-sm me-1 mb-1">Generate Invoice</button>
@@ -2838,8 +2848,13 @@
                             </tr>
                           </thead>
                           <tbody class="list">
+                            <!-- set data-important to the `td` to decide which to show on mobile accordion header
+                             maximum of 3. too long text will be cut and ellipsis
+                             if the `td` has another html element inside you can use data-important to decide
+                               what to show in the accordion header
+                               e.g.  data-important="John Doe" -->
                             <tr class="accordion-container triggered">
-                              <td class="invoiceNumber">
+                              <td class="invoiceNumber" data-important="">
                                 <button class="w-100 accordion-trigger" type="button" onclick="triggerHide(event)">
                                   INV001
                                   <span class="fa fa-chevron-up fs-8 accor-open"></span>
@@ -2847,14 +2862,14 @@
                               </td>
                               <td class="soNumber">SO12345</td>
                               <td class="invoiceDate">2024-11-15</td>
-                              <td class="dueDate">2024-12-01</td>
-                              <td class="totalAmount">$550</td>
+                              <td class="dueDate" data-important="">2024-12-01</td>
+                              <td class="totalAmount" data-important="">$550</td>
                               <td class="amountPaid">$300</td>
                               <td class="balanceDue">$250</td>
                               <td class="status">Partially Paid</td>
                             </tr>
                             <tr class="accordion-container triggered">
-                              <td class="invoiceNumber">
+                              <td class="invoiceNumber" data-important="">
                                 <button class="w-100 accordion-trigger" type="button" onclick="triggerHide(event)">
                                   INV001
                                   <span class="fa fa-chevron-up fs-8 accor-open"></span>
@@ -2862,14 +2877,14 @@
                               </td>
                               <td class="soNumber">SO12345</td>
                               <td class="invoiceDate">2024-11-15</td>
-                              <td class="dueDate">2024-12-01</td>
-                              <td class="totalAmount">$550</td>
+                              <td class="dueDate" data-important="">2024-12-01</td>
+                              <td class="totalAmount" data-important="">$550</td>
                               <td class="amountPaid">$300</td>
                               <td class="balanceDue">$250</td>
                               <td class="status">Partially Paid</td>
                             </tr>
                             <tr class="accordion-container triggered">
-                              <td class="invoiceNumber">
+                              <td class="invoiceNumber" data-important="">
                                 <button class="w-100 accordion-trigger" type="button" onclick="triggerHide(event)">
                                   INV001
                                   <span class="fa fa-chevron-up fs-8 accor-open"></span>
@@ -2877,14 +2892,14 @@
                               </td>
                               <td class="soNumber">SO12345</td>
                               <td class="invoiceDate">2024-11-15</td>
-                              <td class="dueDate">2024-12-01</td>
-                              <td class="totalAmount">$550</td>
+                              <td class="dueDate" data-important="">2024-12-01</td>
+                              <td class="totalAmount" data-important="">$550</td>
                               <td class="amountPaid">$300</td>
                               <td class="balanceDue">$250</td>
                               <td class="status">Partially Paid</td>
                             </tr>
                             <tr class="accordion-container triggered">
-                              <td class="invoiceNumber">
+                              <td class="invoiceNumber" data-important="">
                                 <button class="w-100 accordion-trigger" type="button" onclick="triggerHide(event)">
                                   INV001
                                   <span class="fa fa-chevron-up fs-8 accor-open"></span>
@@ -2892,8 +2907,8 @@
                               </td>
                               <td class="soNumber">SO12345</td>
                               <td class="invoiceDate">2024-11-15</td>
-                              <td class="dueDate">2024-12-01</td>
-                              <td class="totalAmount">$550</td>
+                              <td class="dueDate" data-important="">2024-12-01</td>
+                              <td class="totalAmount" data-important="">$550</td>
                               <td class="amountPaid">$300</td>
                               <td class="balanceDue">$250</td>
                               <td class="status">Partially Paid</td>
@@ -2928,56 +2943,61 @@
                             </tr>
                           </thead>
                           <tbody class="list">
+                            <!-- set data-important to the `td` to decide which to show on mobile accordion header
+                             maximum of 3. too long text will be cut and ellipsis
+                             if the `td` has another html element inside you can use data-important to decide
+                               what to show in the accordion header
+                               e.g.  data-important="John Doe" -->
                             <tr class="accordion-container triggered">
-                              <td class="paymentId">
+                              <td class="paymentId" data-important="">
                                 <button class="w-100 accordion-trigger" type="button" onclick="triggerHide(event)">
                                   PAY001
                                   <span class="fa fa-chevron-up fs-8 accor-open"></span>
                                 </button>
                               </td>
                               <td class="invoiceNumber">INV001</td>
-                              <td class="paymentDate">2024-11-20</td>
+                              <td class="paymentDate" data-important="">2024-11-20</td>
                               <td class="paymentMethod">Bank Transfer</td>
-                              <td class="amount">$300</td>
+                              <td class="amount" data-important="">$300</td>
                               <td class="bankDepositReference">BDR12345</td>
                             </tr>
                             <tr class="accordion-container triggered">
-                              <td class="paymentId">
+                              <td class="paymentId" data-important="">
                                 <button class="w-100 accordion-trigger" type="button" onclick="triggerHide(event)">
                                   PAY001
                                   <span class="fa fa-chevron-up fs-8 accor-open"></span>
                                 </button>
                               </td>
                               <td class="invoiceNumber">INV001</td>
-                              <td class="paymentDate">2024-11-20</td>
+                              <td class="paymentDate" data-important="">2024-11-20</td>
                               <td class="paymentMethod">Bank Transfer</td>
-                              <td class="amount">$300</td>
+                              <td class="amount" data-important="">$300</td>
                               <td class="bankDepositReference">BDR12345</td>
                             </tr>
                             <tr class="accordion-container triggered">
-                              <td class="paymentId">
+                              <td class="paymentId" data-important="">
                                 <button class="w-100 accordion-trigger" type="button" onclick="triggerHide(event)">
                                   PAY001
                                   <span class="fa fa-chevron-up fs-8 accor-open"></span>
                                 </button>
                               </td>
                               <td class="invoiceNumber">INV001</td>
-                              <td class="paymentDate">2024-11-20</td>
+                              <td class="paymentDate" data-important="">2024-11-20</td>
                               <td class="paymentMethod">Bank Transfer</td>
-                              <td class="amount">$300</td>
+                              <td class="amount" data-important="">$300</td>
                               <td class="bankDepositReference">BDR12345</td>
                             </tr>
                             <tr class="accordion-container triggered">
-                              <td class="paymentId">
+                              <td class="paymentId" data-important="">
                                 <button class="w-100 accordion-trigger" type="button" onclick="triggerHide(event)">
                                   PAY001
                                   <span class="fa fa-chevron-up fs-8 accor-open"></span>
                                 </button>
                               </td>
                               <td class="invoiceNumber">INV001</td>
-                              <td class="paymentDate">2024-11-20</td>
+                              <td class="paymentDate" data-important="">2024-11-20</td>
                               <td class="paymentMethod">Bank Transfer</td>
-                              <td class="amount">$300</td>
+                              <td class="amount" data-important="">$300</td>
                               <td class="bankDepositReference">BDR12345</td>
                             </tr>
                             <!-- Add more rows as needed -->
@@ -3026,8 +3046,13 @@
                             </tr>
                           </thead>
                           <tbody class="list">
+                            <!-- set data-important to the `td` to decide which to show on mobile accordion header
+                             maximum of 3. too long text will be cut and ellipsis
+                             if the `td` has another html element inside you can use data-important to decide
+                               what to show in the accordion header
+                               e.g.  data-important="John Doe" -->
                             <tr class="accordion-container triggered">
-                              <td class="poNumber">
+                              <td class="poNumber" data-important="">
                                 <button class="w-100 accordion-trigger" type="button" onclick="triggerHide(event)">
                                   PO9876
                                   <span class="fa fa-chevron-up fs-8 accor-open"></span>
@@ -3035,17 +3060,17 @@
                               </td>
                               <td class="orderDate">2024-11-12</td>
                               <td class="supplierName">SupplierX</td>
-                              <td class="itemsBought">Aluminum Frame</td>
+                              <td class="itemsBought" data-important="">Aluminum Frame</td>
                               <td class="quantity">5</td>
                               <td class="unitPrice">$100</td>
                               <td class="taxable">$500</td>
                               <td class="nonTaxable">$0</td>
                               <td class="appliedTaxRate">8%</td>
                               <td class="taxAmount">$40</td>
-                              <td class="totalAmount">$540</td>
+                              <td class="totalAmount" data-important="">$540</td>
                             </tr>
                             <tr class="accordion-container triggered">
-                              <td class="poNumber">
+                              <td class="poNumber" data-important="">
                                 <button class="w-100 accordion-trigger" type="button" onclick="triggerHide(event)">
                                   PO9876
                                   <span class="fa fa-chevron-up fs-8 accor-open"></span>
@@ -3053,17 +3078,17 @@
                               </td>
                               <td class="orderDate">2024-11-12</td>
                               <td class="supplierName">SupplierX</td>
-                              <td class="itemsBought">Aluminum Frame</td>
+                              <td class="itemsBought" data-important="">Aluminum Frame</td>
                               <td class="quantity">5</td>
                               <td class="unitPrice">$100</td>
                               <td class="taxable">$500</td>
                               <td class="nonTaxable">$0</td>
                               <td class="appliedTaxRate">8%</td>
                               <td class="taxAmount">$40</td>
-                              <td class="totalAmount">$540</td>
+                              <td class="totalAmount" data-important="">$540</td>
                             </tr>
                             <tr class="accordion-container triggered">
-                              <td class="poNumber">
+                              <td class="poNumber" data-important="">
                                 <button class="w-100 accordion-trigger" type="button" onclick="triggerHide(event)">
                                   PO9876
                                   <span class="fa fa-chevron-up fs-8 accor-open"></span>
@@ -3071,17 +3096,17 @@
                               </td>
                               <td class="orderDate">2024-11-12</td>
                               <td class="supplierName">SupplierX</td>
-                              <td class="itemsBought">Aluminum Frame</td>
+                              <td class="itemsBought" data-important="">Aluminum Frame</td>
                               <td class="quantity">5</td>
                               <td class="unitPrice">$100</td>
                               <td class="taxable">$500</td>
                               <td class="nonTaxable">$0</td>
                               <td class="appliedTaxRate">8%</td>
                               <td class="taxAmount">$40</td>
-                              <td class="totalAmount">$540</td>
+                              <td class="totalAmount" data-important="">$540</td>
                             </tr>
                             <tr class="accordion-container triggered">
-                              <td class="poNumber">
+                              <td class="poNumber" data-important="">
                                 <button class="w-100 accordion-trigger" type="button" onclick="triggerHide(event)">
                                   PO9876
                                   <span class="fa fa-chevron-up fs-8 accor-open"></span>
@@ -3089,14 +3114,14 @@
                               </td>
                               <td class="orderDate">2024-11-12</td>
                               <td class="supplierName">SupplierX</td>
-                              <td class="itemsBought">Aluminum Frame</td>
+                              <td class="itemsBought" data-important="">Aluminum Frame</td>
                               <td class="quantity">5</td>
                               <td class="unitPrice">$100</td>
                               <td class="taxable">$500</td>
                               <td class="nonTaxable">$0</td>
                               <td class="appliedTaxRate">8%</td>
                               <td class="taxAmount">$40</td>
-                              <td class="totalAmount">$540</td>
+                              <td class="totalAmount" data-important="">$540</td>
                             </tr>
                             <!-- Add more rows as needed -->
                           </tbody>
@@ -3112,7 +3137,7 @@
 
                     <h5>Bills</h5>
                     <div
-                      id="tableExample"
+                      id="tableExample-bills"
                       data-list='{"valueNames":["billNumber","poNumber","billDate","dueDate","supplierName","totalAmount","amountPaid","balanceDue","status"],"page":5,"pagination":true}'
                     >
                       <div class="table-responsive scrollbar mobile-stack">
@@ -3131,8 +3156,13 @@
                             </tr>
                           </thead>
                           <tbody class="list">
+                            <!-- set data-important to the `td` to decide which to show on mobile accordion header
+                             maximum of 3. too long text will be cut and ellipsis
+                             if the `td` has another html element inside you can use data-important to decide
+                               what to show in the accordion header
+                               e.g.  data-important="John Doe" -->
                             <tr class="accordion-container triggered">
-                              <td class="billNumber">
+                              <td class="billNumber" data-important="">
                                 <button class="w-100 accordion-trigger" type="button" onclick="triggerHide(event)">
                                   BILL123
                                   <span class="fa fa-chevron-up fs-8 accor-open"></span>
@@ -3140,15 +3170,15 @@
                               </td>
                               <td class="poNumber">PO9876</td>
                               <td class="billDate">2024-11-18</td>
-                              <td class="dueDate">2024-12-05</td>
+                              <td class="dueDate" data-important="">2024-12-05</td>
                               <td class="supplierName">SupplierX</td>
                               <td class="totalAmount">$540</td>
                               <td class="amountPaid">$200</td>
-                              <td class="balanceDue">$340</td>
+                              <td class="balanceDue" data-important="">$340</td>
                               <td class="status">Partially Paid</td>
                             </tr>
                             <tr class="accordion-container triggered">
-                              <td class="billNumber">
+                              <td class="billNumber" data-important="">
                                 <button class="w-100 accordion-trigger" type="button" onclick="triggerHide(event)">
                                   BILL123
                                   <span class="fa fa-chevron-up fs-8 accor-open"></span>
@@ -3156,15 +3186,15 @@
                               </td>
                               <td class="poNumber">PO9876</td>
                               <td class="billDate">2024-11-18</td>
-                              <td class="dueDate">2024-12-05</td>
+                              <td class="dueDate" data-important="">2024-12-05</td>
                               <td class="supplierName">SupplierX</td>
                               <td class="totalAmount">$540</td>
                               <td class="amountPaid">$200</td>
-                              <td class="balanceDue">$340</td>
+                              <td class="balanceDue" data-important="">$340</td>
                               <td class="status">Partially Paid</td>
                             </tr>
                             <tr class="accordion-container triggered">
-                              <td class="billNumber">
+                              <td class="billNumber" data-important="">
                                 <button class="w-100 accordion-trigger" type="button" onclick="triggerHide(event)">
                                   BILL123
                                   <span class="fa fa-chevron-up fs-8 accor-open"></span>
@@ -3172,15 +3202,15 @@
                               </td>
                               <td class="poNumber">PO9876</td>
                               <td class="billDate">2024-11-18</td>
-                              <td class="dueDate">2024-12-05</td>
+                              <td class="dueDate" data-important="">2024-12-05</td>
                               <td class="supplierName">SupplierX</td>
                               <td class="totalAmount">$540</td>
                               <td class="amountPaid">$200</td>
-                              <td class="balanceDue">$340</td>
+                              <td class="balanceDue" data-important="">$340</td>
                               <td class="status">Partially Paid</td>
                             </tr>
                             <tr class="accordion-container triggered">
-                              <td class="billNumber">
+                              <td class="billNumber" data-important="">
                                 <button class="w-100 accordion-trigger" type="button" onclick="triggerHide(event)">
                                   BILL123
                                   <span class="fa fa-chevron-up fs-8 accor-open"></span>
@@ -3188,11 +3218,11 @@
                               </td>
                               <td class="poNumber">PO9876</td>
                               <td class="billDate">2024-11-18</td>
-                              <td class="dueDate">2024-12-05</td>
+                              <td class="dueDate" data-important="">2024-12-05</td>
                               <td class="supplierName">SupplierX</td>
                               <td class="totalAmount">$540</td>
                               <td class="amountPaid">$200</td>
-                              <td class="balanceDue">$340</td>
+                              <td class="balanceDue" data-important="">$340</td>
                               <td class="status">Partially Paid</td>
                             </tr>
                             <!-- Add more rows as needed -->
@@ -3224,57 +3254,63 @@
                               <th class="text-900 sort" data-sort="bank_deposit_reference">Bank Deposit Reference</th>
                             </tr>
                           </thead>
+
+                          <!-- set data-important to the `td` to decide which to show on mobile accordion header
+                             maximum of 3. too long text will be cut and ellipsis
+                             if the `td` has another html element inside you can use data-important to decide
+                               what to show in the accordion header
+                               e.g.  data-important="John Doe" -->
                           <tbody class="list">
                             <tr class="accordion-container triggered">
-                              <td class="payment_id">
+                              <td class="payment_id" data-important="">
                                 <button class="w-100 accordion-trigger" type="button" onclick="triggerHide(event)">
                                   PAY002
                                   <span class="fa fa-chevron-up fs-8 accor-open"></span>
                                 </button>
                               </td>
                               <td class="bill_number">BILL123</td>
-                              <td class="payment_date">2024-11-25</td>
+                              <td class="payment_date" data-important="">2024-11-25</td>
                               <td class="payment_method">Check</td>
-                              <td class="amount">$200</td>
+                              <td class="amount" data-important="">$200</td>
                               <td class="bank_deposit_reference">BDR67890</td>
                             </tr>
                             <tr class="accordion-container triggered">
-                              <td class="payment_id">
+                              <td class="payment_id" data-important="">
                                 <button class="w-100 accordion-trigger" type="button" onclick="triggerHide(event)">
                                   PAY002
                                   <span class="fa fa-chevron-up fs-8 accor-open"></span>
                                 </button>
                               </td>
                               <td class="bill_number">BILL123</td>
-                              <td class="payment_date">2024-11-25</td>
+                              <td class="payment_date" data-important="">2024-11-25</td>
                               <td class="payment_method">Check</td>
-                              <td class="amount">$200</td>
+                              <td class="amount" data-important="">$200</td>
                               <td class="bank_deposit_reference">BDR67890</td>
                             </tr>
                             <tr class="accordion-container triggered">
-                              <td class="payment_id">
+                              <td class="payment_id" data-important="">
                                 <button class="w-100 accordion-trigger" type="button" onclick="triggerHide(event)">
                                   PAY002
                                   <span class="fa fa-chevron-up fs-8 accor-open"></span>
                                 </button>
                               </td>
                               <td class="bill_number">BILL123</td>
-                              <td class="payment_date">2024-11-25</td>
+                              <td class="payment_date" data-important="">2024-11-25</td>
                               <td class="payment_method">Check</td>
-                              <td class="amount">$200</td>
+                              <td class="amount" data-important="">$200</td>
                               <td class="bank_deposit_reference">BDR67890</td>
                             </tr>
                             <tr class="accordion-container triggered">
-                              <td class="payment_id">
+                              <td class="payment_id" data-important="">
                                 <button class="w-100 accordion-trigger" type="button" onclick="triggerHide(event)">
                                   PAY002
                                   <span class="fa fa-chevron-up fs-8 accor-open"></span>
                                 </button>
                               </td>
                               <td class="bill_number">BILL123</td>
-                              <td class="payment_date">2024-11-25</td>
+                              <td class="payment_date" data-important="">2024-11-25</td>
                               <td class="payment_method">Check</td>
-                              <td class="amount">$200</td>
+                              <td class="amount" data-important="">$200</td>
                               <td class="bank_deposit_reference">BDR67890</td>
                             </tr>
                           </tbody>
@@ -3302,54 +3338,60 @@
                               <th class="text-900 sort" data-sort="total_cost">Total Cost</th>
                             </tr>
                           </thead>
+
+                          <!-- set data-important to the `td` to decide which to show on mobile accordion header
+                             maximum of 3. too long text will be cut and ellipsis
+                             if the `td` has another html element inside you can use data-important to decide
+                               what to show in the accordion header
+                               e.g.  data-important="John Doe" -->
                           <tbody class="list">
                             <tr class="accordion-container triggered">
-                              <td class="user">
+                              <td class="user" data-important="">
                                 <button class="w-100 accordion-trigger" type="button" onclick="triggerHide(event)">
                                   John Doe
                                   <span class="fa fa-chevron-up fs-8 accor-open"></span>
                                 </button>
                               </td>
-                              <td class="role">Technician</td>
+                              <td class="role" data-important="">Technician</td>
                               <td class="hours_spent">20</td>
                               <td class="hourly_rate">$50</td>
-                              <td class="total_cost">$1000</td>
+                              <td class="total_cost" data-important="">$1000</td>
                             </tr>
                             <tr class="accordion-container triggered">
-                              <td class="user">
+                              <td class="user" data-important="">
                                 <button class="w-100 accordion-trigger" type="button" onclick="triggerHide(event)">
                                   John Doe
                                   <span class="fa fa-chevron-up fs-8 accor-open"></span>
                                 </button>
                               </td>
-                              <td class="role">Technician</td>
+                              <td class="role" data-important="">Technician</td>
                               <td class="hours_spent">20</td>
                               <td class="hourly_rate">$50</td>
-                              <td class="total_cost">$1000</td>
+                              <td class="total_cost" data-important="">$1000</td>
                             </tr>
                             <tr class="accordion-container triggered">
-                              <td class="user">
+                              <td class="user" data-important="">
                                 <button class="w-100 accordion-trigger" type="button" onclick="triggerHide(event)">
                                   John Doe
                                   <span class="fa fa-chevron-up fs-8 accor-open"></span>
                                 </button>
                               </td>
-                              <td class="role">Technician</td>
+                              <td class="role" data-important="">Technician</td>
                               <td class="hours_spent">20</td>
                               <td class="hourly_rate">$50</td>
-                              <td class="total_cost">$1000</td>
+                              <td class="total_cost" data-important="">$1000</td>
                             </tr>
                             <tr class="accordion-container triggered">
-                              <td class="user">
+                              <td class="user" data-important="">
                                 <button class="w-100 accordion-trigger" type="button" onclick="triggerHide(event)">
                                   John Doe
                                   <span class="fa fa-chevron-up fs-8 accor-open"></span>
                                 </button>
                               </td>
-                              <td class="role">Technician</td>
+                              <td class="role" data-important="">Technician</td>
                               <td class="hours_spent">20</td>
                               <td class="hourly_rate">$50</td>
-                              <td class="total_cost">$1000</td>
+                              <td class="total_cost" data-important="">$1000</td>
                             </tr>
                           </tbody>
                         </table>
@@ -3377,58 +3419,64 @@
                               <th class="text-900 sort" data-sort="total_cost">Total Cost</th>
                             </tr>
                           </thead>
+
+                          <!-- set data-important to the `td` to decide which to show on mobile accordion header
+                             maximum of 3. too long text will be cut and ellipsis
+                             if the `td` has another html element inside you can use data-important to decide
+                               what to show in the accordion header
+                               e.g.  data-important="John Doe" -->
                           <tbody class="list">
                             <tr class="accordion-container triggered">
-                              <td class="user">
+                              <td class="user" data-important="">
                                 <button class="w-100 accordion-trigger" type="button" onclick="triggerHide(event)">
                                   Jane Smith
                                   <span class="fa fa-chevron-up fs-8 accor-open"></span>
                                 </button>
                               </td>
                               <td class="start_location">Office</td>
-                              <td class="end_location">Project Site A</td>
+                              <td class="end_location" data-important="">Project Site A</td>
                               <td class="miles_driven">50</td>
                               <td class="rate_per_mile">$0.58</td>
-                              <td class="total_cost">$29</td>
+                              <td class="total_cost" data-important="">$29</td>
                             </tr>
                             <tr class="accordion-container triggered">
-                              <td class="user">
+                              <td class="user" data-important="">
                                 <button class="w-100 accordion-trigger" type="button" onclick="triggerHide(event)">
                                   Jane Smith
                                   <span class="fa fa-chevron-up fs-8 accor-open"></span>
                                 </button>
                               </td>
                               <td class="start_location">Office</td>
-                              <td class="end_location">Project Site A</td>
+                              <td class="end_location" data-important="">Project Site A</td>
                               <td class="miles_driven">50</td>
                               <td class="rate_per_mile">$0.58</td>
-                              <td class="total_cost">$29</td>
+                              <td class="total_cost" data-important="">$29</td>
                             </tr>
                             <tr class="accordion-container triggered">
-                              <td class="user">
+                              <td class="user" data-important="">
                                 <button class="w-100 accordion-trigger" type="button" onclick="triggerHide(event)">
                                   Jane Smith
                                   <span class="fa fa-chevron-up fs-8 accor-open"></span>
                                 </button>
                               </td>
                               <td class="start_location">Office</td>
-                              <td class="end_location">Project Site A</td>
+                              <td class="end_location" data-important="">Project Site A</td>
                               <td class="miles_driven">50</td>
                               <td class="rate_per_mile">$0.58</td>
-                              <td class="total_cost">$29</td>
+                              <td class="total_cost" data-important="">$29</td>
                             </tr>
                             <tr class="accordion-container triggered">
-                              <td class="user">
+                              <td class="user" data-important="">
                                 <button class="w-100 accordion-trigger" type="button" onclick="triggerHide(event)">
                                   Jane Smith
                                   <span class="fa fa-chevron-up fs-8 accor-open"></span>
                                 </button>
                               </td>
                               <td class="start_location">Office</td>
-                              <td class="end_location">Project Site A</td>
+                              <td class="end_location" data-important="">Project Site A</td>
                               <td class="miles_driven">50</td>
                               <td class="rate_per_mile">$0.58</td>
-                              <td class="total_cost">$29</td>
+                              <td class="total_cost" data-important="">$29</td>
                             </tr>
                           </tbody>
                         </table>
@@ -3800,8 +3848,72 @@
     <script src="../assets/js/theme.js"></script>
     <script src="../vendors/glightbox/glightbox.min.js"></script>
 
+    <!--  thi is the template for accordion trigger-->
+    <template id="accordion-template">
+      <button class="w-100 accordion-trigger" type="button">
+        <span class="important-data-1"></span>
+        <span class="important-data-2"></span>
+        <span class="important-data-3"></span>
+        <span class="fa fa-chevron-up fs-8 accor-open"></span>
+      </button>
+    </template>
+
     <!-- Entities Section  Implementation -->
     <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        // check if the viewport matched to the accordion media query
+        const mobileMediaQuery = window.matchMedia('(max-width: 768px)');
+
+        const initializeAccordions = () => {
+          document.querySelectorAll('tr.accordion-container').forEach((row) => {
+            //set data-important to the `td` to decide which to show on mobile accordion header
+            //maximum of 3. too long text will be cut and ellipsis
+            const cells = row.querySelectorAll('td[data-important]'); // get all the node of marked important cells/row
+            if (!cells || cells.length === 0) return;
+
+            const button = row.querySelector('.accordion-trigger');
+            const chevronSpan = row.querySelector('.accordion-trigger .fa-chevron-up');
+
+            // so we dont need to keep on creating the element
+            if (!button.dataset.initialized) {
+              const firstTextContent = (cells[0].dataset.important || cells[0].textContent) ?? '';
+              const secondTextContent = (cells[1].dataset.important || cells[1].textContent) ?? '';
+              const thirdTextContent = (cells[2].dataset.important || cells[2].textContent) ?? '';
+
+              const secondTextContentSpan = document.createElement('span');
+              secondTextContentSpan.className = 'accordion-meta';
+              secondTextContentSpan.textContent = secondTextContent;
+
+              const thirdTextContentSpan = document.createElement('span');
+              thirdTextContentSpan.className = 'accordion-meta';
+              thirdTextContentSpan.textContent = thirdTextContent;
+
+              chevronSpan.insertAdjacentHTML('beforebegin', secondTextContentSpan.outerHTML);
+              chevronSpan.insertAdjacentHTML('beforebegin', thirdTextContentSpan.outerHTML);
+              button.dataset.initialized = true;
+            }
+          });
+
+          mobileMediaQuery.addEventListener('change', (e) => {
+            e.matches ? initializeAccordions() : destroyAccordions();
+          });
+        };
+
+        const destroyAccordions = () => {
+          document.querySelectorAll('.accordion-meta').forEach((el) => el.remove());
+          document.querySelectorAll('.accordion-trigger').forEach((btn) => {
+            btn.removeEventListener('click', triggerHide);
+            delete btn.dataset.initialized;
+          });
+        };
+
+        if (mobileMediaQuery.matches) initializeAccordions();
+
+        mobileMediaQuery.addEventListener('change', (e) => {
+          e.matches ? initializeAccordions() : destroyAccordions();
+        });
+      });
+
       /**
        * Handles the hide event triggered by a button click.
        * @param {Event} event - The event object passed from the button's `onclick` handler.

@@ -601,6 +601,11 @@ section {
     color: inherit;
   }
 
+  /* hide the extra meta on desktop view */
+  .mobile-stack .accordion-container .accordion-trigger .accordion-meta {
+    display: none;
+  }
+
   .mobile-stack .accordion-container .accordion-trigger .accor-open {
     display: none;
   }
@@ -670,20 +675,71 @@ section {
     transition: min-height 0.15s ease-out, max-height 0.15s ease-out;
   }
 
+  /* container accordion close */
   .mobile-stack .accordion-container.triggered {
-    --accordion-column-to-show: 2;
+    --accordion-column-to-show: 1;
     --accordion-column-height: 44px;
     min-height: calc(var(--accordion-column-height) * var(--accordion-column-to-show));
     max-height: calc(var(--accordion-column-height) * var(--accordion-column-to-show));
     overflow: hidden;
   }
 
-  .mobile-stack .accordion-container.triggered > *:not(:nth-child(1), :nth-child(2)) {
+  /* container accordion closed about header start here */
+  .mobile-stack .accordion-container.triggered > *:not(:nth-child(1)) {
     /* display: none; */
     visibility: hidden;
     opacity: 0;
     transition-behavior: allow-discrete;
     transition: opacity 0.15s ease-out, visibility 0.15s ease-out;
+  }
+
+  .mobile-stack .accordion-container > *:not(:nth-child(1)) {
+    transition: transform 0.15s ease-out, opacity 0.15s ease-out;
+  }
+
+  .mobile-stack .accordion-container.triggering > *:not(:nth-child(1)) {
+    transform: translateY(-10px);
+    opacity: 0;
+  }
+
+  .mobile-stack .accordion-container.untriggering > *:not(:nth-child(1)) {
+    /* transform: translateY(0); */
+    opacity: 0.5;
+  }
+
+  /* container accordion closed about header end here */
+
+  /* accordion button trigger and children start here */
+  /* button trigger */
+  .mobile-stack .accordion-container .accordion-trigger {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.5rem;
+    border: none;
+    margin: 0;
+    padding: 0;
+    background-color: inherit;
+    color: inherit;
+  }
+
+  .mobile-stack .accordion-container.triggered .accordion-trigger .accordion-meta,
+  .mobile-stack .accordion-container.triggered .accordion-trigger {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+
+  .mobile-stack .accordion-container.triggered .accordion-trigger .accordion-meta {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.1s ease-in, transform 0.1s ease-in;
+  }
+
+  .mobile-stack .accordion-container .accordion-trigger .accordion-meta {
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.1s ease-out, transform 0.1s ease-out;
   }
 
   /* icon */
@@ -706,31 +762,7 @@ section {
   .mobile-stack .accordion-container .accordion-trigger .accor-open {
     color: var(--falcon-gray-500);
   }
-
-  .mobile-stack .accordion-container > *:not(:nth-child(1), :nth-child(2)) {
-    transition: transform 0.15s ease-out, opacity 0.15s ease-out;
-  }
-
-  .mobile-stack .accordion-container.triggering > *:not(:nth-child(1), :nth-child(2)) {
-    transform: translateY(-10px);
-    opacity: 0;
-  }
-
-  .mobile-stack .accordion-container.untriggering > *:not(:nth-child(1), :nth-child(2)) {
-    /* transform: translateY(0); */
-    opacity: 0.5;
-  }
-
-  .mobile-stack .accordion-container .accordion-trigger {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border: none;
-    margin: 0;
-    padding: 0;
-    background-color: inherit;
-    color: inherit;
-  }
+  /* accordion button and children end here */
 }
 /*-----------------------------------------------
 |   Items
