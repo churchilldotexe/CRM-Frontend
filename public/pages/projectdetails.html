@@ -72,7 +72,7 @@
     <!-- ===============================================-->
     <main class="main" id="top">
       <!-- vertical side bar -->
-      <nav class="navbar navbar-vertical navbar-expand-xl navbar-light">
+      <nav class="d-lg-none navbar navbar-vertical navbar-expand-xl navbar-light">
         <div class="collapse navbar-collapse">
           <div class="navbar-vertical-content scrollbar sidebar">
             <a class="side-link" href="#list-item-1">
@@ -1128,7 +1128,54 @@
                 <!-- ===============================================-->
 
                 <section id="list-item-2">
-                  <h4 id="list-item-2">Entities</h4>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <h4 id="list-item-entities  " class="mb-0">Entities</h4>
+
+                    <div class="d-flex">
+                      <div class="btn-group">
+                        <button
+                          class="btn btn-falcon-default btn-sm m-3 me-0 dropdown-toggle"
+                          type="button"
+                          style="z-index: 10"
+                          data-bs-toggle="dropdown"
+                          data-display="static"
+                          aria-haspopup="true"
+                          aria-expanded="false"
+                        >
+                          <span class="fas fa-plus me-1" data-fa-transform="shrink-3"></span>Add Entity
+                        </button>
+                        <div class="dropdown-menu py-0">
+                          <div class="card shadow-none border-0" style="width: 22rem">
+                            <div class="card-body">
+                              <form>
+                                <div class="mb-3">
+                                  <input class="form-control" type="text" placeholder="Name" />
+                                </div>
+                                <div class="mb-3">
+                                  <input class="form-control" type="text" placeholder="Role" />
+                                </div>
+                                <div class="mb-3">
+                                  <input class="form-control" type="text" placeholder="Email" />
+                                </div>
+                                <div class="mb-3">
+                                  <input class="form-control" type="text" placeholder="Phone" />
+                                </div>
+                                <div class="mb-3">
+                                  <input class="form-control" type="text" placeholder="Updates" />
+                                </div>
+
+                                <div class="mb-3">
+                                  <button class="btn btn-primary d-block w-100 mt-3" type="submit" name="submit">
+                                    Add
+                                  </button>
+                                </div>
+                              </form>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                   <div class="table-responsive scrollbar mobile-stack">
                     <table class="table table-bordered table-striped fs-10 mb-0 entities-table">
                       <thead class="bg-200">
@@ -1173,6 +1220,7 @@
                               data-bs-toggle="tooltip"
                               data-bs-placement="top"
                               title="Edit"
+                              aria-label="Edit"
                             >
                               <span class="fas fa-edit" style="font-size: 1rem"></span>
                             </button>
@@ -1182,6 +1230,7 @@
                               data-bs-toggle="tooltip"
                               data-bs-placement="top"
                               title="Remove"
+                              aria-label="remove"
                             >
                               <span class="fas fa-times" style="font-size: 1rem"></span>
                             </button>
@@ -1192,7 +1241,7 @@
                           <td class="orderNumber" data-title="Name">
                             <button class="w-100 accordion-trigger" type="button" onclick="triggerHide(event)">
                               John Doe
-                              <span class="fa fa-chevron-down fs-8 accor-open"></span>
+                              <span class="fa fa-chevron-up fs-8 accor-open"></span>
                             </button>
                           </td>
                           <td class="orderDate" data-title="Role">Project Manager</td>
@@ -1238,7 +1287,7 @@
                           <td class="orderNumber" data-title="Name">
                             <button class="w-100 accordion-trigger" type="button" onclick="triggerHide(event)">
                               John Doe
-                              <span class="fa fa-chevron-down fs-8 accor-open"></span>
+                              <span class="fa fa-chevron-up fs-8 accor-open"></span>
                             </button>
                           </td>
                           <td class="orderDate" data-title="Role">Project Manager</td>
@@ -1284,7 +1333,7 @@
                           <td class="orderNumber" data-title="Name">
                             <button class="w-100 accordion-trigger" type="button" onclick="triggerHide(event)">
                               John Doe
-                              <span class="fa fa-chevron-down fs-8 accor-open"></span>
+                              <span class="fa fa-chevron-up fs-8 accor-open"></span>
                             </button>
                           </td>
                           <td class="orderDate" data-title="Role">Project Manager</td>
@@ -1329,7 +1378,7 @@
                           <td class="orderNumber" data-title="Name">
                             <button class="w-100 accordion-trigger" type="button" onclick="triggerHide(event)">
                               John Doe
-                              <span class="fa fa-chevron-down fs-8 accor-open"></span>
+                              <span class="fa fa-chevron-up fs-8 accor-open"></span>
                             </button>
                           </td>
                           <td class="orderDate" data-title="Role">Project Manager</td>
@@ -1388,46 +1437,48 @@
                 <!-- ===============================================-->
 
                 <section id="list-item-3">
-                  <h4>Items</h4>
-                  <div class="d-flex justify-content-end">
-                    <div class="btn-group">
-                      <button
-                        class="btn btn-falcon-default btn-sm m-3 me-0 dropdown-toggle"
-                        type="button"
-                        style="z-index: 10"
-                        data-bs-toggle="dropdown"
-                        data-display="static"
-                        aria-haspopup="true"
-                        aria-expanded="false"
-                      >
-                        <span class="fas fa-plus me-1" data-fa-transform="shrink-3"></span>Add Item
-                      </button>
-                      <div class="dropdown-menu py-0">
-                        <div class="card shadow-none border-0" style="width: 22rem">
-                          <div class="card-body">
-                            <form>
-                              <div class="mb-3">
-                                <input class="form-control" type="text" placeholder="Item Number" />
-                              </div>
-                              <div class="mb-3">
-                                <input class="form-control" type="text" placeholder="Item Name" />
-                              </div>
-                              <div class="mb-3">
-                                <input class="form-control" type="text" placeholder="Quantity" />
-                              </div>
-                              <div class="mb-3">
-                                <input class="form-control" type="text" placeholder="Price" />
-                              </div>
-                              <div class="mb-3">
-                                <input class="form-control" type="text" placeholder="Total" />
-                              </div>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <h4 class="mb-0">Items</h4>
+                    <div class="d-flex">
+                      <div class="btn-group">
+                        <button
+                          class="btn btn-falcon-default btn-sm m-3 me-0 dropdown-toggle"
+                          type="button"
+                          style="z-index: 10"
+                          data-bs-toggle="dropdown"
+                          data-display="static"
+                          aria-haspopup="true"
+                          aria-expanded="false"
+                        >
+                          <span class="fas fa-plus me-1" data-fa-transform="shrink-3"></span>Add Item
+                        </button>
+                        <div class="dropdown-menu py-0">
+                          <div class="card shadow-none border-0" style="width: 22rem">
+                            <div class="card-body">
+                              <form>
+                                <div class="mb-3">
+                                  <input class="form-control" type="text" placeholder="Item Number" />
+                                </div>
+                                <div class="mb-3">
+                                  <input class="form-control" type="text" placeholder="Item Name" />
+                                </div>
+                                <div class="mb-3">
+                                  <input class="form-control" type="text" placeholder="Quantity" />
+                                </div>
+                                <div class="mb-3">
+                                  <input class="form-control" type="text" placeholder="Price" />
+                                </div>
+                                <div class="mb-3">
+                                  <input class="form-control" type="text" placeholder="Total" />
+                                </div>
 
-                              <div class="mb-3">
-                                <button class="btn btn-primary d-block w-100 mt-3" type="submit" name="submit">
-                                  Add
-                                </button>
-                              </div>
-                            </form>
+                                <div class="mb-3">
+                                  <button class="btn btn-primary d-block w-100 mt-3" type="submit" name="submit">
+                                    Add
+                                  </button>
+                                </div>
+                              </form>
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -1625,11 +1676,11 @@
                                 Grids= NA,<br />
                                 Spacer= N/A, OverAll Thickness= N/A,<br />
                                 Shape= Square/Rectangular,<br />
-                                Lead time= Standard<br /><br />
+                                Lead time= Standard<br />
 
                                 Frame details:<br />
                                 Frame type= N/A, Frame material= N/A,<br />
-                                Notes=<br /><br />
+                                Notes=<br />
 
                                 Services:<br />
                                 DeliveryDelivery= For pick up from designated warehouse,<br />
@@ -1735,7 +1786,7 @@
                       </div>
                     </div>
 
-                    <div class="picture-container row mt-3">
+                    <div class="picture-container gap-3 row mt-3">
                       <div class="header ls px-0 mb-3 text-uppercase">Attachments</div>
                       <div class="pictures-section px-0 mb-3 d-grid" id="pictures-1">
                         <div
@@ -1752,7 +1803,7 @@
                           <p class="drag-text">Choose an image or drag and drop it here</p>
                           <p class="drag-text-hide" style="display: none">Browse files to open images</p>
                           <p class="file-formats">JPEG, PNG formats, up to 50MB</p>
-                          <button type="button" class="browse-btn">Browse File</button>
+                          <button type="button" class="browse-btn">Browse Photo</button>
                         </div>
 
                         <input
@@ -1777,7 +1828,7 @@
                           <p class="drag-text">Choose an image or drag and drop it here</p>
                           <p class="drag-text-hide" style="display: none">Browse files to open images</p>
                           <p class="file-formats">JPEG, PNG formats, up to 50MB</p>
-                          <button class="browse-btn">Browse File</button>
+                          <button class="browse-btn">Browse Photo</button>
                         </div>
 
                         <input
@@ -1826,46 +1877,48 @@
                 <!-- ===============================================-->
 
                 <section id="list-item-4">
-                  <h4>Team & Tasks</h4>
-                  <div class="d-flex justify-content-end">
-                    <div class="btn-group">
-                      <button
-                        class="btn btn-falcon-default btn-sm m-3 dropdown-toggle"
-                        type="button"
-                        style="z-index: 10"
-                        data-bs-toggle="dropdown"
-                        data-display="static"
-                        aria-haspopup="true"
-                        aria-expanded="false"
-                      >
-                        <span class="fas fa-plus me-1" data-fa-transform="shrink-3"></span>Add Task
-                      </button>
-                      <div class="dropdown-menu py-0">
-                        <div class="card shadow-none border-0" style="width: 22rem">
-                          <div class="card-body">
-                            <form>
-                              <div class="mb-3">
-                                <input class="form-control" type="email" placeholder="Task" />
-                              </div>
-                              <div class="mb-3">
-                                <input class="form-control" type="email" placeholder="Attendee" />
-                              </div>
-                              <div class="mb-3">
-                                <input class="form-control" type="email" placeholder="Location" />
-                              </div>
-                              <div class="mb-3">
-                                <input class="form-control" type="email" placeholder="Start Time" />
-                              </div>
-                              <div class="mb-3">
-                                <input class="form-control" type="email" placeholder="Duration" />
-                              </div>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <h4 class="mb-0">Team &amp; Tasks</h4>
+                    <div class="d-flex">
+                      <div class="btn-group">
+                        <button
+                          class="btn btn-falcon-default btn-sm m-3 dropdown-toggle"
+                          type="button"
+                          style="z-index: 10"
+                          data-bs-toggle="dropdown"
+                          data-display="static"
+                          aria-haspopup="true"
+                          aria-expanded="false"
+                        >
+                          <span class="fas fa-plus me-1" data-fa-transform="shrink-3"></span>Add Task
+                        </button>
+                        <div class="dropdown-menu py-0">
+                          <div class="card shadow-none border-0" style="width: 22rem">
+                            <div class="card-body">
+                              <form>
+                                <div class="mb-3">
+                                  <input class="form-control" type="email" placeholder="Task" />
+                                </div>
+                                <div class="mb-3">
+                                  <input class="form-control" type="email" placeholder="Attendee" />
+                                </div>
+                                <div class="mb-3">
+                                  <input class="form-control" type="email" placeholder="Location" />
+                                </div>
+                                <div class="mb-3">
+                                  <input class="form-control" type="email" placeholder="Start Time" />
+                                </div>
+                                <div class="mb-3">
+                                  <input class="form-control" type="email" placeholder="Duration" />
+                                </div>
 
-                              <div class="mb-3">
-                                <button class="btn btn-primary d-block w-100 mt-3" type="submit" name="submit">
-                                  Add
-                                </button>
-                              </div>
-                            </form>
+                                <div class="mb-3">
+                                  <button class="btn btn-primary d-block w-100 mt-3" type="submit" name="submit">
+                                    Add
+                                  </button>
+                                </div>
+                              </form>
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -1999,7 +2052,7 @@
                     <h5>Gallery Sample</h5>
                     <div>
                       <div
-                        class="picture-placeholder pt-2 pb-2 h-auto max-h-none max-h-250px d-flex text-center flex-column align-item-center justify-content-center"
+                        class="picture-placeholder py-sm-2 h-auto max-h-none max-h-250px d-flex text-center flex-column align-item-center justify-content-center"
                         id="gallery-uploader"
                         onclick="document.getElementById('gallery-input').click();"
                         ondragover="handleDragOver(event)"
@@ -2008,7 +2061,7 @@
                         <i class="cloud-icon d-none">☁</i>
                         <p class="drag-text d-none lg-block">Choose a file or drag and drop it here</p>
                         <button type="button" class="btn bg-primary text-bg-primary w-100 w-sm-75 w-lg-auto">
-                          Browse to upload Files
+                          Browse File
                         </button>
                       </div>
 
@@ -2022,9 +2075,7 @@
 
                       <div id="gallery-container" class="row mx-n1">
                         <!-- First Image -->
-                        <!-- <div id="gallery-item-1"  class=" col-6 p-1 position-relative"> -->
                         <div id="gallery-item-1" class="gallery-container d-flex col-6 p-1 position-relative">
-                          <!-- in desktop if this is hovered the ul with class gallery-menu will appear -->
                           <a class="post1" href="../assets/img/generic/4.jpg" data-gallery="gallery-1">
                             <img class="img-fluid rounded gallery-item" src="../assets/img/generic/4.jpg" alt="" />
 
@@ -2032,7 +2083,6 @@
                             <ul class="dropdown-menu gallery-menu gap-2 justify-content-center align-items-center">
                               <li>
                                 <button type="button" class="dropdown-item" onclick="copyImageToClipboard(this)">
-                                  <!-- <span class="far fa-copy fs-8"></span> -->
                                   Copy
                                 </button>
                               </li>
@@ -2042,7 +2092,6 @@
                                   class="dropdown-item"
                                   onclick="removeGalleryNode(event, 'gallery-item-1')"
                                 >
-                                  <!-- <span class="far fa-trash-alt text-danger fs-8"></span> -->
                                   Delete
                                 </button>
                               </li>
@@ -2067,14 +2116,10 @@
                                 aria-labelledby="dropdownMenuButton"
                               >
                                 <li>
-                                  <button class="dropdown-item" onclick="copyImageToClipboard(this)">
-                                    <!-- <span class="far fa-copy fs-8"></span> -->
-                                    Copy
-                                  </button>
+                                  <button class="dropdown-item" onclick="copyImageToClipboard(this)">Copy</button>
                                 </li>
                                 <li>
                                   <button class="dropdown-item" onclick="removeGalleryNode(event, 'gallery-item-1')">
-                                    <!-- <span class="far fa-trash-alt text-danger fs-8"></span> -->
                                     Delete
                                   </button>
                                 </li>
@@ -2091,14 +2136,10 @@
                             <!-- Desktop menu -->
                             <ul class="dropdown-menu gallery-menu gap-2 justify-content-center align-items-center">
                               <li>
-                                <button class="dropdown-item" onclick="copyImageToClipboard(this)">
-                                  <!-- <span class="far fa-copy fs-8"></span> -->
-                                  Copy
-                                </button>
+                                <button class="dropdown-item" onclick="copyImageToClipboard(this)">Copy</button>
                               </li>
                               <li>
                                 <button class="dropdown-item" onclick="removeGalleryNode(event, 'gallery-item-2')">
-                                  <!-- <span class="far fa-trash-alt text-danger fs-8"></span> -->
                                   Delete
                                 </button>
                               </li>
@@ -2123,14 +2164,10 @@
                                 aria-labelledby="dropdownMenuButton"
                               >
                                 <li>
-                                  <button class="dropdown-item" onclick="copyImageToClipboard(this)">
-                                    <!-- <span class="far fa-copy fs-8"></span> -->
-                                    Copy
-                                  </button>
+                                  <button class="dropdown-item" onclick="copyImageToClipboard(this)">Copy</button>
                                 </li>
                                 <li>
                                   <button class="dropdown-item" onclick="removeGalleryNode(event, 'gallery-item-2')">
-                                    <!-- <span class="far fa-trash-alt text-danger fs-8"></span> -->
                                     Delete
                                   </button>
                                 </li>
@@ -2140,7 +2177,6 @@
                         </div>
 
                         <!-- Third Image -->
-                        <!-- <div id="gallery-item-3" class="col-4 p-1 position-relative"> -->
                         <div id="gallery-item-3" class="gallery-container d-flex col-4 p-1 position-relative">
                           <a class="post1" href="../assets/img/gallery/4.jpg" data-gallery="gallery-1">
                             <img class="img-fluid rounded gallery-item" src="../assets/img/gallery/4.jpg" alt="" />
@@ -2148,14 +2184,10 @@
                             <!-- Desktop menu -->
                             <ul class="dropdown-menu gallery-menu gap-2 justify-content-center align-items-center">
                               <li>
-                                <button class="dropdown-item" onclick="copyImageToClipboard(this)">
-                                  <!-- <span class="far fa-copy fs-8"></span> -->
-                                  Copy
-                                </button>
+                                <button class="dropdown-item" onclick="copyImageToClipboard(this)">Copy</button>
                               </li>
                               <li>
                                 <button class="dropdown-item" onclick="removeGalleryNode(event, 'gallery-item-3')">
-                                  <!-- <span class="far fa-trash-alt text-danger fs-8"></span> -->
                                   Delete
                                 </button>
                               </li>
@@ -2180,14 +2212,10 @@
                                 aria-labelledby="dropdownMenuButton"
                               >
                                 <li>
-                                  <button class="dropdown-item" onclick="copyImageToClipboard(this)">
-                                    <!-- <span class="far fa-copy fs-8"></span> -->
-                                    Copy
-                                  </button>
+                                  <button class="dropdown-item" onclick="copyImageToClipboard(this)">Copy</button>
                                 </li>
                                 <li>
                                   <button class="dropdown-item" onclick="removeGalleryNode(event, 'gallery-item-3')">
-                                    <!-- <span class="far fa-trash-alt text-danger fs-8"></span> -->
                                     Delete
                                   </button>
                                 </li>
@@ -2197,7 +2225,6 @@
                         </div>
 
                         <!-- Fourth Image -->
-                        <!-- <div id="gallery-item-4" class=" col-4 p-1 position-relative"> -->
                         <div id="gallery-item-4" class="gallery-container col-4 p-1 position-relative">
                           <a class="post1" href="#pdfDisplay" data-gallery="gallery-1" data-type="inline">
                             <div class="file-preview gallery-item">
@@ -2208,10 +2235,7 @@
                             <!-- Desktop menu -->
                             <ul class="dropdown-menu gallery-menu gap-2 justify-content-center align-items-center">
                               <li>
-                                <button class="dropdown-item" onclick="copyImageToClipboard(this)">
-                                  <!-- <span class="far fa-copy fs-8"></span> -->
-                                  Copy
-                                </button>
+                                <button class="dropdown-item" onclick="copyImageToClipboard(this)">Copy</button>
                               </li>
                               <li>
                                 <button class="dropdown-item" onclick="removeGalleryNode(event, 'gallery-item-4')">
@@ -2240,14 +2264,10 @@
                                 aria-labelledby="dropdownMenuButton"
                               >
                                 <li>
-                                  <button class="dropdown-item" onclick="copyImageToClipboard(this)">
-                                    <!-- <span class="far fa-copy fs-8"></span> -->
-                                    Copy
-                                  </button>
+                                  <button class="dropdown-item" onclick="copyImageToClipboard(this)">Copy</button>
                                 </li>
                                 <li>
                                   <button class="dropdown-item" onclick="removeGalleryNode(event, 'gallery-item-4')">
-                                    <!-- <span class="far fa-trash-alt text-danger fs-8"></span> -->
                                     Delete
                                   </button>
                                 </li>
@@ -2264,14 +2284,10 @@
                             <!-- Desktop menu -->
                             <ul class="dropdown-menu gallery-menu gap-2 justify-content-center align-items-center">
                               <li>
-                                <button class="dropdown-item" onclick="copyImageToClipboard(this)">
-                                  <!-- <span class="far fa-copy fs-8"></span> -->
-                                  Copy
-                                </button>
+                                <button class="dropdown-item" onclick="copyImageToClipboard(this)">Copy</button>
                               </li>
                               <li>
                                 <button class="dropdown-item" onclick="removeGalleryNode(event, 'gallery-item-5')">
-                                  <!-- <span class="far fa-trash-alt text-danger fs-8"></span> -->
                                   Delete
                                 </button>
                               </li>
@@ -2303,7 +2319,6 @@
                                 </li>
                                 <li>
                                   <button class="dropdown-item" onclick="removeGalleryNode(event, 'gallery-item-5')">
-                                    <!-- <span class="far fa-trash-alt text-danger fs-8"></span> -->
                                     Delete
                                   </button>
                                 </li>
@@ -2323,14 +2338,10 @@
                             <!-- Desktop menu -->
                             <ul class="dropdown-menu gallery-menu gap-2 justify-content-center align-items-center">
                               <li>
-                                <button class="dropdown-item" onclick="copyImageToClipboard(this)">
-                                  <!-- <span class="far fa-copy fs-8"></span> -->
-                                  Copy
-                                </button>
+                                <button class="dropdown-item" onclick="copyImageToClipboard(this)">Copy</button>
                               </li>
                               <li>
                                 <button class="dropdown-item" onclick="removeGalleryNode(event, 'gallery-item-6')">
-                                  <!-- <span class="far fa-trash-alt text-danger fs-8"></span> -->
                                   Delete
                                 </button>
                               </li>
@@ -2355,14 +2366,10 @@
                                 aria-labelledby="dropdownMenuButton"
                               >
                                 <li>
-                                  <button class="dropdown-item" onclick="copyImageToClipboard(this)">
-                                    <!-- <span class="far fa-copy fs-8"></span> -->
-                                    Copy
-                                  </button>
+                                  <button class="dropdown-item" onclick="copyImageToClipboard(this)">Copy</button>
                                 </li>
                                 <li>
                                   <button class="dropdown-item" onclick="removeGalleryNode(event, 'gallery-item-6')">
-                                    <!-- <span class="far fa-trash-alt text-danger fs-8"></span> -->
                                     Delete
                                   </button>
                                 </li>
@@ -2373,12 +2380,6 @@
 
                         <!-- Seventh Image -->
                         <div id="gallery-item-7" class="gallery-container d-flex col-6 p-1 position-relative">
-                          <!-- <a -->
-                          <!--   class="post1" -->
-                          <!--   href="#pdfDisplay" -->
-                          <!--   data-gallery="gallery-1" -->
-                          <!--   data-type="inline" -->
-                          <!-- > -->
                           <a class="post1" href="#textDisplay" data-gallery="gallery-1" data-type="inline">
                             <div class="file-preview gallery-item">
                               <i class="far fa-file-alt fa-3x"></i>
@@ -2437,70 +2438,9 @@
                           </a>
                         </div>
 
-                        <!-- NOTE: for testing -->
-                        <!-- changes list:  -->
-                        <!-- href and img src -->
-                        <!-- <div id="gallery-item-8" class="gallery-container d-flex col-4 p-1 position-relative">
-                                    <a class="post1" href="../assets/img/gallery/4.jpg" data-gallery="gallery-1">
-                                       <img
-                                          class="img-fluid rounded gallery-item"
-                                          src="../assets/img/gallery/4.jpg"
-                                          alt=""
-                                       />
-
-                                        Single Adaptive Dropdown
-                                       <div class="dropdown position-absolute top-0 end-0">
-                                           Button: Hidden on desktop (visible on mobile)
-                                          <button
-                                             class="btn btn-link dropdown-toggle d-lg-none hide-dropdown-caret"
-                                             type="button"
-                                             data-bs-toggle="dropdown"
-                                             aria-expanded="false"
-                                             onclick="event.stopPropagation()"
-                                          >
-                                             <i class="fas fa-ellipsis-v"></i>
-                                          </button>
-
-                                           Dropdown Menu: Responsive Styling
-                                          <ul class="dropdown-menu dropdown-menu-end gallery-dropdown-menu">
-                                              Desktop: Horizontal Menu
-                                             <li class="d-none d-lg-inline-block">
-                                                <button class="btn btn-link" onclick="copyImageToClipboard(this)">
-                                                   Copy
-                                                </button>
-                                             </li>
-                                             <li class="d-none d-lg-inline-block">
-                                                <button
-                                                   class="btn btn-link text-danger"
-                                                   onclick="removeGalleryNode(event, 'gallery-item-8')"
-                                                >
-                                                   Delete
-                                                </button>
-                                             </li>
-
-                                              Mobile: Vertical List
-                                             <li class="d-lg-none">
-                                                <button class="dropdown-item" onclick="copyImageToClipboard(this)">
-                                                   Copy
-                                                </button>
-                                             </li>
-                                             <li class="d-lg-none">
-                                                <button
-                                                   class="dropdown-item"
-                                                   onclick="removeGalleryNode(event, 'gallery-item-8')"
-                                                >
-                                                   Delete
-                                                </button>
-                                             </li>
-                                          </ul>
-                                       </div>
-                                    </a>
-                                 </div> -->
-
                         <!-- TODO: fallback should trigger a new tab  -->
                         <!-- Div to display PDF -->
                         <div id="pdfDisplay" style="margin: 10px; display: none">
-                          <!-- data="../assets/docs/dummy-file.pdf" -->
                           <object
                             data="../assets/docs/sample.csv"
                             type="application/pdf"
@@ -4085,7 +4025,7 @@
                     <p class="drag-text">Choose an image or drag and drop it here</p>
                     <p class="drag-text-hide" style="display: none;">Browse files to open images</p>
                     <p class="file-formats">JPEG, PNG formats, up to 50MB</p>
-                    <button class="browse-btn">Browse File</button>
+                    <button class="browse-btn">Browse Photo</button>
                 `;
 
         let input = document.getElementById(inputId);
@@ -4471,7 +4411,7 @@
         // Create a remove button for each uploaded file
         const removeButton = document.createElement('button');
         removeButton.classList.add('remove-button');
-        removeButton.textContent = 'X';
+        removeButton.innerHTML = `&times;`;
         removeButton.onclick = function () {
           filePreview.removeChild(fileContainer);
           addFilePlaceholder(); // Ensure placeholder remains
@@ -4499,7 +4439,10 @@
         // Create a new placeholder div for file upload
         const newPlaceholder = document.createElement('div');
         newPlaceholder.classList.add('file-placeholder');
-        newPlaceholder.innerHTML = '<i class="fas fa-upload"></i>';
+        <!-- newPlaceholder.innerHTML = ''; -->
+        newPlaceholder.innerHTML = `
+        <button type="button" class="btn d-flex justify-content-center align-items-center gap-lg-3 bg-primary text-bg-primary w-100 w-lg-25 ">
+            Browse File </button>`;
 
         // Create the hidden file input for triggering file upload
         const fileInput = document.createElement('input');
@@ -5139,66 +5082,3 @@
     <script src="../vendors/glightbox/glightbox.min.js"></script>
   </body>
 </html>
-
-<!-- function appendToGalleryNode(imgSrc, imgId = null) {
-            // Clone the template above
-            const template = document.getElementById('gallery-item-template');
-            const clonedTemplate = template.content.cloneNode(true);
-
-            // for the necessary elements
-            const container = clonedTemplate.querySelector('.gallery-container');
-            const img = clonedTemplate.querySelector('img');
-
-            // this can be the id from database
-            const uniqueId = `gallery-item-${Date.now()}`;
-            container.id = imgId ?? uniqueId;
-
-            // Create an Image object to get dimensions
-            const imgObject = new Image();
-            imgObject.src = imgSrc;
-            let colClass = 'col-4'; // can be col-4 or col-6
-
-            // identify the image ratio to correctly apply the col class
-            imgObject.onload = function () {
-               const width = img.width; // Image width in pixels
-               const height = img.height; // Image height in pixels
-
-               // Calculate the ratio of the image
-               const ratio = width / height;
-
-               // apply the necessary col class based on the ratio
-               const colClass = ratio > 1 ? 'col-6' : 'col-4';
-               container.classList.add(colClass); // add the col class to the container
-            };
-
-            img.src = imgSrc;
-            clonedTemplate.querySelector('a').href = imgSrc; // Update anchor link if needed
-
-            // 5. Fix event listener arguments for DELETE buttons
-            const deleteButtons = clonedTemplate.querySelectorAll("[onclick*='removeGalleryNode']");
-            deleteButtons.forEach((btn) => {
-               btn.setAttribute('onclick', `removeGalleryNode(event, '${uniqueId}')`);
-            });
-
-            document.getElementById('gallery-container').appendChild(clonedTemplate);
-         } -->
-
-<!-- function handleFileDrop(event, pictureSectionId) {
-            event.preventDefault();
-            const dropArea = event.currentTarget;
-            console.log(dropArea, 'dropArea');
-
-            dropArea.style.borderColor = '#ccc'; // Reset border color
-            dropArea.style.backgroundColor = '#f9f9f9'; // Reset background color
-
-            const file = event.dataTransfer.files[0];
-            console.log('file', event);
-            const fileInput = document.querySelector(`#${pictureSectionId} + input`);
-
-            const dataTransfer = new DataTransfer();
-            dataTransfer.items.add(file);
-            fileInput.files = dataTransfer.files;
-
-            // Trigger the change event for the input to handle the file
-            fileInput.dispatchEvent(new Event('change'));
-         } -->
