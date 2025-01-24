@@ -610,6 +610,9 @@ section {
   .mobile-stack td,
   .mobile-stack tr {
     display: block;
+    /* color: var(--falcon-table-color-state, var(--falcon-table-color-type, var(--falcon-table-color))); */
+    /* color: var(--falcon-table-color-state, var(--falcon-table-color-type, var(--falcon-gray-900))); */
+    color: var(--falcon-gray-700);
   }
 
   .mobile-stack thead tr {
@@ -679,6 +682,11 @@ section {
   .mobile-stack .accordion-container.triggered .accordion-trigger .accor-open {
     transform: rotate(180deg);
     transition: rotate 0.3s ease-out;
+    color: var(--falcon-gray-500);
+  }
+
+  .mobile-stack .accordion-container .accordion-trigger .accor-open {
+    color: var(--falcon-gray-500);
   }
 
   .mobile-stack .accordion-container > *:not(:first-child) {
@@ -691,7 +699,7 @@ section {
   }
 
   .mobile-stack .accordion-container.untriggering > *:not(:first-child) {
-    transform: translateY(0);
+    /* transform: translateY(0); */
     opacity: 0.5;
   }
 
