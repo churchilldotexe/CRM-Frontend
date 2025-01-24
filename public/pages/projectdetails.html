@@ -3679,8 +3679,8 @@
             parentContainer.classList.remove(animationClass);
             parentContainer.classList.toggle('triggered');
           } else {
-            parentContainer.classList.remove(animationClass);
             parentContainer.classList.toggle('triggered');
+            parentContainer.classList.remove(animationClass);
           }
         };
 
@@ -3688,7 +3688,7 @@
         requestAnimationFrame(() => {
           // Force synchronous layout to ensure animation starts
           getComputedStyle(parentContainer).opacity;
-          setTimeout(finishAction, 250);
+          setTimeout(finishAction, 300);
         });
       }
     </script>
